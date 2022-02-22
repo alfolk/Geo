@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_alfolk_medication_chart_record,alfolk_medication_chart_record,model_medication_planning,base.group_user,1,1,1,1
+access_alfolk_medication_chart_record_line,alfolk_medication_chart_record_line,model_medication_planning_line,base.group_user,1,1,1,1
+access_alfolk_medication_chart_record_day,alfolk_medication_chart_record_day,model_medication_planning_day,base.group_user,1,1,1,1

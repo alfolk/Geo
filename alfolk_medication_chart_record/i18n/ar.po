@@ -1,0 +1,113 @@
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning__person
+msgid "Person"
+msgstr "اسم الشخص"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning__medication_duration
+msgid "Medicine Duration"
+msgstr " فترة/مدة العلاج"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning__warehouse
+msgid "Warehouse"
+msgstr "المخزن"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__medication
+msgid "Medicine"
+msgstr " اسم العلاج"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__quantity
+msgid "Quantity"
+msgstr "الكمية المطلوبة"
+
+#. module: alfolk_medication_chart_record
+#: model_terms:ir.ui.view,arch_db:alfolk_medication_chart_record.medication_planning_form
+msgid "Close"
+msgstr "غلق"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields.selection,name:alfolk_medication_chart_record.selection__medication_planning__state__close
+msgid "Close"
+msgstr "المنتهية"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields.selection,name:alfolk_medication_chart_record.selection__medication_planning__state__draft
+msgid "Draft"
+msgstr "جديد"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields.selection,name:alfolk_medication_chart_record.selection__medication_planning__state__picking
+msgid "Send Picking"
+msgstr "ارسال الطلب للمخزن"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields.selection,name:alfolk_medication_chart_record.selection__medication_planning__state__receive_med
+msgid "Receive Medication"
+msgstr "استلام الدواء من المخزن"
+
+
+#. module: alfolk_medication_chart_record
+#: model_terms:ir.ui.view,arch_db:alfolk_medication_chart_record.medication_planning_form
+msgid "Register Medication"
+msgstr "تسجيل معاد الدواء"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__employee
+msgid "Employee"
+msgstr "تسليم العلاج من قبل"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__notes
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_day__day
+msgid "Day With Hour"
+msgstr "التاريخ والساعة"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_day__employee
+msgid "Employee"
+msgstr "توقيع المشرف"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__quantity
+msgid "Medicine Quantity Ordered"
+msgstr "الكمية "
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__quantity_received
+msgid "Medicine Quantity Received"
+msgstr "الكميةالمصروفة"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_line__quantity_re
+msgid "Medicine Quantity Residual"
+msgstr "الكميةالمتبقية"
+
+#. module: alfolk_medication_chart_record
+#: model:ir.model.fields,field_description:alfolk_medication_chart_record.field_medication_planning_day__medication
+msgid "Medication"
+msgstr "العلاج"
+
+#. module: alfolk_medication_chart_record
+#: model_terms:ir.ui.view,arch_db:alfolk_medication_chart_record.medication_planning_form
+msgid "Medicament Times"
+msgstr "مواعيد تلقي العلاج"
+
+#. module: alfolk_medication_chart_record
+#: model_terms:ir.ui.view,arch_db:alfolk_medication_chart_record.medication_planning_form
+msgid "Medicament Information"
+msgstr "العلاج"
+
+
+
+#. module: alfolk_medication_chart_record
+#: model:ir.actions.act_window,name:alfolk_medication_chart_record.medication_planning_action_window
+#: model:ir.ui.menu,name:alfolk_medication_chart_record.medication_planning_menu_root
+msgid "Alfolk Medication Chart Record"
+msgstr "تسجيل مخطط دواء"

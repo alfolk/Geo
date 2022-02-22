@@ -1,0 +1,155 @@
+#. module: medication_planning
+#: model:ir.actions.act_window,name:medication_planning.medication_planning_action_window
+#: model:ir.ui.menu,name:medication_planning.medication_planning_menu_root
+msgid "Medication Planned"
+msgstr "مخطط الدواء"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning__person
+msgid "Person"
+msgstr "اسم الشخص"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning__medication_duration
+msgid "Medicine Duration"
+msgstr " فترة/مدة العلاج"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning__warehouse
+msgid "Warehouse"
+msgstr "المخزن"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__medication
+msgid "Medicine"
+msgstr " اسم العلاج"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
+msgid "Quantity"
+msgstr "الكمية المطلوبة"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_returned
+msgid "Qty Returned"
+msgstr "الكميةالمرتجعة"
+
+
+
+
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_re
+msgid "Qty To Return"
+msgstr "ارتجاع"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "الوحدة"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__product_uom_ids
+msgid "Unit of Measure"
+msgstr "الوحدة"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
+msgid "Quantity"
+msgstr "الكمية المطلوبة"
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Send Picking"
+msgstr "طلب صرف الدواء"
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Return Quantity"
+msgstr "ارتجاع الكمية المتبقية"
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Close"
+msgstr "غلق"
+
+#. module: medication_planning
+#: model:ir.model.fields.selection,name:medication_planning.selection__medication_planning__state__close
+msgid "Close"
+msgstr "المنتهية"
+
+#. module: medication_planning
+#: model:ir.model.fields.selection,name:medication_planning.selection__medication_planning__state__draft
+msgid "Draft"
+msgstr "جديد"
+
+#. module: medication_planning
+#: model:ir.model.fields.selection,name:medication_planning.selection__medication_planning__state__picking
+msgid "Send Picking"
+msgstr "ارسال الطلب للمخزن"
+
+#. module: medication_planning
+#: model:ir.model.fields.selection,name:medication_planning.selection__medication_planning__state__receive_med
+msgid "Receive Medication"
+msgstr "استلام الدواء من المخزن"
+
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Register Medication"
+msgstr "تسجيل معاد الدواء"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__employee
+msgid "Employee"
+msgstr "تسليم العلاج من قبل"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__notes
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__day
+msgid "Day With Hour"
+msgstr "التاريخ والساعة"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__employee
+msgid "Employee"
+msgstr "توقيع المشرف"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
+msgid "Medicine Quantity Ordered"
+msgstr "الكمية "
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_received
+msgid "Medicine Quantity Received"
+msgstr "الكميةالمصروفة"
+
+
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__medication
+msgid "Medication"
+msgstr "العلاج"
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Medicament Times"
+msgstr "مواعيد تلقي العلاج"
+
+#. module: medication_planning
+#: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
+msgid "Medicament Information"
+msgstr "العلاج"
+
+
+
+#. module: medication_planning
+#: model:ir.actions.act_window,name:medication_planning.medication_planning_action_window
+#: model:ir.ui.menu,name:medication_planning.medication_planning_menu_root
+msgid "Alfolk Medication Chart Record"
+msgstr "تسجيل مخطط دواء"

@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <template id="report_form_apply">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div align="center">
+                                <h2>
+                                    <span t-field="o.form_id"/>
+                                </h2>
+                            </div>
+                            <div name="center_box">
+                                <span>Customer :</span>
+                                <span t-field="o.partner_id"/>
+                            </div>
+                            <div>
+                                <t>
+                                    <t/>
+                                    <div class="page">
+                                        <table style="width:100%;border: 1px bold;">
+                                            <thead>
+                                                <tr width='300px'
+                                                    style="border: 1px solid black;font-size: 20px">
+                                                    <th class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                    السؤال
+                                                    </th>
+                                                    <th width='50px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+الاجابة                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="invoice_tbody">
+                                                <t t-foreach="o.apply_ids" t-as="l">
+                                                    <tr>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span t-field="l.form_line_id"/>
+
+                                                        </td>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span t-field="l.answer"/>
+
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                        <br></br>
+                                        <br></br>
+
+
+                                        <br/>
+                                        <br/>
+
+
+                                    </div>
+                                </t>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record id="action_report_picking" model="ir.actions.report">
+            <field name="name">Form</field>
+            <field name="model">form.apply</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">form_design.report_form_apply</field>
+            <field name="report_file">form_design.report_form_apply</field>
+            <field name="print_report_name">"x"</field>
+            <field name="binding_model_id" ref="model_form_apply"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

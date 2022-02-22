@@ -1,0 +1,172 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="form_design_view">
+            <field name="name">form_design list</field>
+            <field name="model">form.design</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="view_form_fill_in" string="Filled out Forms" type="object"
+                                    icon="fa-wpforms"/>
+                        </div>
+                        <div class="oe_title" style="width: 100%;">
+                            <label for="name" string="Title"/>
+                            <field name="name" colspan="4"/>
+                            <separator/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="res_id"/>
+                            <field name="category" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="allow_add"/>
+                            </group>
+
+                        </group>
+                        <field name="question_ids">
+                            <tree>
+                                <field name="title"/>
+                                <field name="question_type"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="form_design_kanban">
+            <field name="name">form_design Kanban</field>
+            <field name="model">form.design</field>
+            <field name="arch" type="xml">
+                <kanban sample="1">
+                    <field name="name"/>
+                    <field name="res_id"/>
+                    <field name="color"/>
+                    <field name="activity_ids"/>
+                    <field name='active'/>
+                    <field name='fill_count'/>
+                    <templates>
+                        <t t-name="kanban-box">
+
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+
+                                <!-- <field name="avatar_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>-->
+                                <div class="o_kanban_image_fill_left">
+                                    <a name="form_fill_in" type="object">
+                                        <img t-att-src="'/form_design/static/description/form-icon-png-23.png'"
+                                             widget="image" style="max-height:70pt;max-width:90%" alt="Product Image"
+                                             options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+                                    </a>
+                                </div>
+
+
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name" placeholder="Form Title"/>
+                                                <br/>
+                                            </strong>
+                                            <span class="o_kanban_record_subtitle">
+                                                <field name="res_id"/>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="hr_activity_container float-right">
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                                <div class="oe_kanban_content position-absolute fixed-bottom mr-2 ">
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left"/>
+
+                                        <div class="oe_kanban_bottom_right">
+                                            <a name="view_form_fill_in" type="object">
+                                                <span>Filled out Forms (</span>
+                                                <field name="fill_count"/>
+                                                <span>)</span>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="form_design_line_view">
+            <field name="name">form_design list</field>
+            <field name="model">form.design.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title" style="width: 100%;">
+                            <label for="title" string="Question"/>
+                            <field name="title" colspan="4"/>
+                            <separator/>
+                        </div>
+                        <group>
+                            <field name="question_type" widget="radio"/>
+                            <group attrs="{'invisible': [('question_type', 'not in', ['simple_choice', 'multiple_choice', 'matrix'])]}">
+
+                                <field name="suggested_answer_ids" string="Answers">
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="value" string="Choices"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group attrs="{'invisible': [('question_type', '!=', 'matrix')]}">
+                                <field name="matrix_coltype" widget="radio"
+                                       attrs="{'invisible': [('question_type', '!=', 'matrix')]}"
+                                       options="{'horizontal': True}"/>
+                                <field name="matrix_answer_type"
+                                       attrs="{'invisible': [('question_type', '!=', 'matrix')]}" widget="radio"
+                                       options="{'horizontal': True}"/>
+
+                                <field name="matrix_answer_ids" string="Col Answers"
+                                       context="{'default_question_id': active_id}"
+                                       attrs="{'invisible': [('matrix_coltype', '!=', 'custom')]}">
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="value" string="Choices"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <record id="form_design_tree_view" model="ir.ui.view">
+            <field name="name">form.design</field>
+            <field name="model">form.design</field>
+            <field name="arch" type="xml">
+                <tree string="form">
+                    <field name="name"/>
+                    <field name="res_id"/>
+                    <button name="form_fill_in" string="Fill form" type="object"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="form_design_action_window">
+            <field name="name">Form Design</field>
+            <field name="res_model">form.design</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+        <menuitem name="Form Design" action="form_design_action_window" id="form_design_menu_root"
+                  web_icon="form_design,static/description/form-icon-png-23.png"/>
+    </data>
+</odoo>

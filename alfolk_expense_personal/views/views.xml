@@ -1,0 +1,112 @@
+<odoo>
+    <data>
+        <!-- tree -->
+        <record model="ir.ui.view" id="alfolk_expense_personal_list">
+            <field name="name">alfolk_expense_personal list</field>
+            <field name="model">alfolk.expense.personal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="date"/>
+                    <field name="customer"/>
+                    <field name="amount"/>
+                    <field name="payment_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record id="alfolk_expense_personal_form" model="ir.ui.view">
+            <field name="name">alfolk.expense.personal.form</field>
+            <field name="model">alfolk.expense.personal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,confirm"
+                               statusbar_colors='{"draft":"blue"}'/>
+                        <button name="confirm"
+                                string="Confirm"
+                                type="object"
+                                class="oe_highlight"
+                                states="draft"
+                        />
+
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="button_journal_entries"
+                                    string="Journal Entries" type="object"
+                                    attrs="{'invisible':[('state','=','draft')]}" icon="fa-bars">
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code" attrs="{'invisible':[('state','!=','confirm')]}" readonly="1"/>
+                                <field name="payment_type" widget="radio"
+                                       attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="amount" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="treasury"  attrs="{'readonly':[('state','=','confirm')],'required':[('payment_type','!=','transfer_money')],'invisible':[('payment_type','=','transfer_money')]}"/>
+                                <field name="date" attrs="{'readonly':[('state','=','confirm')]}"/>
+
+                                <field name="account_from"
+                                       attrs="{'invisible':[('payment_type','!=','transfer_money')],'required':[('payment_type','=','transfer_money')]}"/>
+                                <field name="account_to"
+                                       attrs="{'invisible':[('payment_type','!=','transfer_money')],'required':[('payment_type','=','transfer_money')]}"/>
+                                <field name="employee" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="account_id" attrs="{'readonly':[('state','=','confirm')],'invisible':[('payment_type','not in',('expense_money','receive_money'))]}"/>
+                                <field name="customer" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="description"
+                                       attrs="{'readonly':[('state','=','confirm')],'invisible':[('payment_type','!=','expense_money')]}"/>
+                                <field name="note" attrs="{'readonly':[('state','=','confirm')]}"/>
+
+
+                            </group>
+                            <group>
+
+
+                            </group>
+                        </group>
+
+
+                    </sheet>
+                    <div class="o_attachment_preview"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="alfolk_expense_personal_action_window">
+            <field name="name">Personal Expense</field>
+            <field name="res_model">alfolk.expense.personal</field>
+            <field name="view_mode">tree,form,search,pivot,kanban</field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="Personal Expense"
+                  web_icon="alfolk_expense_personal,static/description/expense.png"
+                  id="alfolk_expense_personal_menu_root"
+                  action="alfolk_expense_personal_action_window"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Report"
+                  id="alfolk_expense_personal_menu_report"
+                  parent="alfolk_expense_personal_menu_root"/>
+
+        <record id="seq_code" model="ir.sequence">
+            <field name="name">Reference</field>
+            <field name="code">code.expense</field>
+            <field name="padding">5</field>
+            <field name="prefix">EX</field>
+        </record>
+
+    </data>
+</odoo>

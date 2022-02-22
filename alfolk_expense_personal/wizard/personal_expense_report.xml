@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_expense_report" model="ir.ui.view">
+        <field name="name">Personal Expense Report</field>
+        <field name="model">alfolk.personal.expense.report</field>
+        <field name="arch" type="xml">
+            <form string="Choose your date">
+                <p class="oe_gray">
+                </p>
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="treasury"/>
+                    <field name="customer"/>
+                </group>
+
+                <footer>
+                    <button name="print_pdf_personal_expense_report" string="Print" type="object" default_focus="1"
+                            class="oe_highlight"/>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+
+            </form>
+
+
+        </field>
+    </record>
+    <record id="action_wizard_personal_expense" model="ir.actions.act_window">
+        <field name="name">Personal Expense Report</field>
+        <field name="res_model">alfolk.personal.expense.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_expense_report"/>
+        <field name="target">new</field>
+    </record>
+    <report
+            id="action_personal_expense"
+            model="alfolk.personal.expense.report"
+            string="Personal Expense Report"
+            menu="False"
+            report_type="qweb-html"
+            name="alfolk_expense_personal.alfolk_personal_expense_report"
+            file="alfolk_expense_personal.alfolk_personal_expense_report"
+    />
+    <menuitem
+            id="menu_action_wizard_personal_expense"
+            name="Personal Expense Report"
+            action="action_wizard_personal_expense"
+            sequence="3"
+            parent="alfolk_expense_personal.alfolk_expense_personal_menu_root"
+
+    />
+
+</odoo>

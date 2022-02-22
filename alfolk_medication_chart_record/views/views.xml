@@ -1,0 +1,175 @@
+<odoo>
+    <data>
+
+        <record id="view_product_edit_form" model="ir.ui.view">
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='detailed_type']" position="before">
+                    <field name="pro_type"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_pick_edit_form" model="ir.ui.view">
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="med_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="alfolk_medication_chart_record_list">
+            <field name="name">alfolk_medication_chart_record_list</field>
+            <field name="model">medication.planning</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="person"/>
+                    <field name="medication_duration"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_account_payment_register_form" model="ir.ui.view">
+            <field name="name">alfolk.medication.chart.record.day.form</field>
+            <field name="model">medication.planning.day</field>
+            <field name="arch" type="xml">
+                <form string="Register Medication">
+                    <group>
+                        <field name="line_ids" invisible="1"/>
+                        <field name="medication"/>
+                        <field name="day"/>
+                        <field name="quantity" force_save="1"/>
+                        <field name="quantity_received" force_save="1"/>
+                        <field name="quantity_re" force_save="1"/>
+
+                        <field name="employee"/>
+                        <field name="products" invisible="1"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record id="alfolk_medication_chart_record_form" model="ir.ui.view">
+            <field name="name">alfolk.medication.chart.record.form</field>
+            <field name="model">medication.planning</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_picking"
+                                string="Send Picking"
+                                type="object"
+                                class="oe_highlight"
+ states="draft"
+                        />
+                        <button name="action_register_day"
+                                string="Register Medication"
+                                type="object"
+                                class="oe_highlight"
+                                states="receive_med"
+                        /> <button name="create_residual"
+                                string="Return Quantity"
+                                type="object"
+                                class="oe_highlight"
+                                states="receive_med"
+                        />
+                        <button name="close"
+                                string="Close"
+                                type="object"
+                                class="oe_highlight"
+states="receive_med"                        />
+
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,picking,receive_med,close,return_med"
+                               statusbar_colors='{"draft":"blue"}'/>
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object"
+                                    name="action_view_delivery"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('delivery_count', '=', 0)]}">
+                                <field name="delivery_count" widget="statinfo" string="Delivery"/>
+                            </button>
+                        </div>
+
+                        <group>
+                            <field name="person" attrs="{'readonly':[('state','=','close')]}"/>
+                            <field name="medication_duration" attrs="{'readonly':[('state','=','close')]}"/>
+                            <field name="warehouse" attrs="{'readonly':[('state','=','close')]}"/>
+                            <field name="location" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
+                            <field name="location_des" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
+                            <field name="picking_type" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="employee_id" invisible="1"/>
+                            <field name="products" invisible="1"/>
+                            <field name="picking_ids" invisible="1"/>
+
+                        </group>
+                        <group>
+                            <notebook>
+                                <page string="Medicament Information">
+
+                                    <field name="line_id">
+                                        <tree editable="bottom">
+                                            <field name="medication"/>
+                                            <field name="product_uom_id" invisible="1"/>
+                                            <field name="quantity"/>
+                                            <field name="quantity_received" readonly="1" force_save="1"/>
+                                            <field name="quantity_re"/>
+                                            <field name="employee"/>
+                                            <field name="notes"/>
+                                        </tree>
+                                    </field>
+
+                                </page>
+
+                                <page string="Medicament Times">
+
+                                    <field name="line_ids" attrs="{'readonly':[('state','=','close')]}">
+                                        <tree editable="bottom">
+                                            <field name="medication"/>
+                                            <field name="day"/>
+                                            <field name="quantity"/>
+                                            <field name="employee"/>
+                                            <field name="products" invisible="1"/>
+                                            <field name="quantity_received" invisible="1"/>
+                                            <field name="quantity_re" invisible="1"/>
+                                        </tree>
+                                    </field>
+
+                                </page>
+
+                            </notebook>
+
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="alfolk_medication_chart_record_action_window">
+            <field name="name">Medication Planned</field>
+            <field name="res_model">medication.planning</field>
+            <field name="view_mode">tree,form,search,pivot,kanban</field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="Medication Planned" id="alfolk_medication_chart_record_menu_root"
+                  web_icon="alfolk_medication_chart_record,static/description/medicien.png"
+                  action="alfolk_medication_chart_record_action_window"/>
+
+        <!-- menu categories -->
+
+
+    </data>
+</odoo>

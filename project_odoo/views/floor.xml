@@ -1,0 +1,105 @@
+<odoo>
+    <record id="floor_form_views" model="ir.ui.view">
+        <field name="name">Floor Form View</field>
+        <field name="model">folk.floor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+
+                            <field name="room_capacity"/>
+                            <!--                    <field name="room_capacity"/>-->
+                        </group>
+                    </group>
+<!--                    <field name="room_ids"/>-->
+                </sheet>
+                 <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+            </form>
+        </field>
+    </record>
+
+<!--    add search view-->
+     <record id="floor_search_view" model="ir.ui.view">
+            <field name="name">folk.floor.search</field>
+            <field name="model">folk.floor</field>
+            <field name="arch" type="xml">
+                <search string="Floors">
+                    <field name="name"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Floor" name="name" context="{'group_by':'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+    <record id="floor_tree_views" model="ir.ui.view">
+        <field name="name">Floor Tree View</field>
+        <field name="model">folk.floor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="room_capacity"/>
+                <!--                <field name="description"/>-->
+            </tree>
+
+        </field>
+    </record>
+
+
+      <record id="floor_kanban_view" model="ir.ui.view">
+            <field name="name">folk.floor.kanban</field>
+            <!-- any name  -->
+            <field name="model">folk.floor</field>
+            <!-- model name  -->
+            <field name="arch" type="xml">
+                <kanban quick_create="false">
+                     <field name="name"/>
+                     <field name="room_capacity"/>
+                    <templates>
+                        <t t-name="kanban-box">
+
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                    <div class="oe_kanban_details">
+                                            <ul>
+                                                <li>Floor:
+                                                    <field name="name"/>
+                                                </li>
+
+                                            <li>Room Capacity :
+                                                <field name="room_capacity"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+    <record id="floors_action" model="ir.actions.act_window">
+        <field name="name">Floors</field>
+        <field name="res_model">folk.floor</field>
+        <field name="view_mode">tree,form,search,kanban</field>
+
+    </record>
+    <menuitem id="floor_menu"
+              name="Floor Menu"
+              parent="room_menu"
+              action="floors_action"
+              sequence="20"/>
+</odoo>

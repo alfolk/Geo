@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_alfolk_expense_personal_alfolk_expense_personal,alfolk_expense_personal.alfolk_expense_personal,model_alfolk_expense_personal,base.group_user,1,1,1,1
+access_personal_expense,personal_expense,model_alfolk_personal_expense_report,base.group_user,1,1,1,1
+access_personal_expense_line,personal_expense_line,model_alfolk_personal_expense_report_line,base.group_user,1,1,1,1

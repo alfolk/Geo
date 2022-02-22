@@ -1,0 +1,61 @@
+<odoo>
+
+       <record id="category_customer" model="ir.ui.view">
+        <field name="name">Partner Category</field>
+        <field name="model">alfolk.partner.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="category_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="category_customer_tree" model="ir.ui.view">
+        <field name="name">category customer</field>
+        <field name="model">alfolk.partner.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="category_customer_action" model="ir.actions.act_window">
+        <field name="name">Partner Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">alfolk.partner.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="partner_category" name="Partner Category"
+              action="category_customer_action" parent="sale.sale_order_menu"/>
+
+    <record id="partner_category_menu" model="ir.ui.view">
+        <field name="name">Category</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <page name="contact_addresses" position="before" autofocus="autofocus">
+                <page string="Personal Information" name="info">
+                    <group>
+                        <group>
+                            <field name="category"/>
+                            <field name="gender"/>
+                            <field name="identification_id"/>
+                            <field name="father_name"/>
+                            <field name="mother_name"/>
+                            <field name="date_of_birth"/>
+                            <field name="age"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+
+        </field>
+    </record>
+
+</odoo>

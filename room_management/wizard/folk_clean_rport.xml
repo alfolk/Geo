@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_clean_report" model="ir.ui.view">
+        <field name="name">Clean Report</field>
+        <field name="model">alfolk.clean.report</field>
+        <field name="arch" type="xml">
+            <form string="Choose your date">
+                <p class="oe_gray">
+                </p>
+                <group>
+                    <field name="floor_id"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </group>
+
+                <footer>
+                    <button name="print_pdf_clean_report" string="Print" icon="fa-print" type="object" default_focus="1"
+                            class="oe_highlight"/>
+                    <button string="Cancel" icon="fa-close" class="btn btn-primary" special="cancel"/>
+                </footer>
+
+            </form>
+
+
+        </field>
+    </record>
+    <record id="menu_action_wizard_clean" model="ir.actions.act_window">
+        <field name="name">Folk Clean Report</field>
+        <field name="res_model">alfolk.clean.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_clean_report"/>
+        <field name="target">new</field>
+    </record>
+    <report
+            id="action_clean_folk"
+            model="alfolk.clean.report"
+            string="Folk Clean Report"
+            menu="False"
+            report_type="qweb-pdf"
+            name="room_management.alfolk_clean_report_new"
+            file="room_management.alfolk_clean_report_new"
+    />
+
+    <menuitem id="wizard_report"
+              name="Reports"
+              parent="room_root"/>
+    <menuitem
+            id="menu_wizard_clean"
+            name="Clean Report"
+            action="menu_action_wizard_clean"
+            parent="room_management.wizard_report"
+            sequence="10"
+
+    />
+
+
+</odoo>

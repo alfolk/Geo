@@ -1,0 +1,172 @@
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply__state__draft
+msgid "Draft"
+msgstr "جديد"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply__state__done
+msgid "Closed"
+msgstr "المنتهية"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply__form_id
+msgid "Form"
+msgstr "إستمارة"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__text_box
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_answer_type__text
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__text_box
+msgid "Multiple Lines Text Box"
+msgstr "مربع نص متعدد الأسطر"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__multiple_choice
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__multiple_choice
+msgid "Multiple choice: multiple answers allowed"
+msgstr "اختيار من متعدد: يُسمح باختيار أكثر من إجابة"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__simple_choice
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__simple_choice
+msgid "Multiple choice: only one answer"
+msgstr "اختيار من متعدد: إجابة واحدة فقط"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__numerical_box
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__numerical_box
+msgid "Numerical Value"
+msgstr "قيمة عددية"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design_line__matrix_coltype
+msgid "Matrix Columns"
+msgstr "أعمدة المصفوفة"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design_line__matrix_answer_type
+msgid "Matrix Answer Type"
+msgstr "نوع أجابة المصفوفة"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_coltype__custom
+msgid "Custom"
+msgstr "مخصص"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_coltype__week
+msgid "Days of the Week"
+msgstr "أيام الأسبوع"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_coltype__month
+msgid "Days of the Month"
+msgstr "أيام الشهر"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__matrix
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__matrix
+msgid "Matrix"
+msgstr "المصفوفة"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__char_box
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__char_box
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_answer_type__char
+msgid "Single Line Text Box"
+msgstr "مربع نص سطر واحد"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__check
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__check
+msgid "CheckBox"
+msgstr "مربع الاختيار"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__date
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__date
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_answer_type__date
+#: model:ir.model.fields,field_description:form_design.field_form_apply__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: form_design
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__datetime
+#: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__datetime
+#: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_answer_type__datetime
+msgid "Datetime"
+msgstr "التاريخ والوقت"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__name
+#: model:ir.model.fields,field_description:form_design.field_form_design_line__title
+#: model_terms:ir.ui.view,arch_db:form_design.form_design_view
+msgid "Title"
+msgstr "العنوان"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design__res_id
+msgid "Responsible"
+msgstr "المسئول"
+
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design_line__suggested_answer_ids
+msgid "Answers"
+msgstr "الأجابات"
+
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__question_type
+#: model:ir.model.fields,field_description:form_design.field_form_design_line__question_type
+msgid "Question Type"
+msgstr "نوع السؤال"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply__partner_id
+msgid "Partner"
+msgstr "العميل"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__answer
+msgid "Answer"
+msgstr "الاجابة"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view2
+msgid "Next"
+msgstr "التالي"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_design_line_view
+msgid "Question"
+msgstr "السؤال"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_design_line_view
+msgid "Answers"
+msgstr "الأجابات"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_design_line_view
+msgid "Choices"
+msgstr "الأختيارات"
+
+#. module: form_design
+#: model:ir.actions.act_window,name:form_design.form_apply_action_window
+#: model:ir.ui.menu,name:form_design.form_apply_menu_root
+msgid "Form Fill Out"
+msgstr "ملء إستمارة"
+
+#. module: form_design
+#: model:ir.actions.act_window,name:form_design.form_apply_line_action_window
+#: model:ir.ui.menu,name:form_design.form_apply_line_menu_root
+msgid "Form Fill Out Line"
+msgstr "عناصر ملء إستمارة"
+
+#. module: form_design
+#: model:ir.actions.act_window,name:form_design.form_design_action_window
+#: model:ir.ui.menu,name:form_design.form_design_menu_root
+msgid "Form Design"
+msgstr "تصميم الإستمارات"

@@ -1,0 +1,145 @@
+<odoo>
+    <record id="room_accommodations_form_view" model="ir.ui.view">
+        <field name="name">Rooms Accommodations Form View</field>
+        <field name="model">folk.rooms.accommodations</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <!--                     <div class="oe_title">-->
+
+                    <label for="status" string="Status"/>
+                    <h5>
+                        <field name="status"/>
+                    </h5>
+                    <!--                     </div>-->
+                    <group>
+                        <group>
+                            <field name="responsible_id"/>
+                            <field name="customer_name"/>
+                            <field name="room_id"/>
+                        </group>
+                        <group>
+
+                            <!--                    <field name="status"/>-->
+                            <!--                    <field name="floor_id"/>-->
+                            <field name="bed_reserve_from"/>
+                            <field name="bed_reserve_to"/>
+                            <field name="bed_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="floor_tree_accommodations_views" model="ir.ui.view">
+        <field name="name">Floor Tree View</field>
+        <field name="model">folk.rooms.accommodations</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="room_id"/>
+                <field name="bed_id"/>
+<!--                attrs="{'invisible': [('status','=','occupied')]}"/>-->
+                <field name="responsible_id"/>
+                <field name="customer_name"/>
+                <field name="bed_reserve_from"/>
+                <field name="bed_reserve_to"/>
+                <field name="status"/>
+            </tree>
+
+        </field>
+    </record>
+
+
+    <!--    add search view-->
+    <record id="floor_accommodations_search_view" model="ir.ui.view">
+        <field name="name">folk.room.accommodations.search</field>
+        <field name="model">folk.rooms.accommodations</field>
+        <field name="arch" type="xml">
+            <search string="Room Accommodations">
+                <field name="responsible_id"/>
+                <field name="customer_name"/>
+                <field name="bed_reserve_from"/>
+                <field name="bed_reserve_to"/>
+                <field name="status"/>
+
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Responsible" name="responsible_id" context="{'group_by':'responsible_id'}"/>
+                    <filter string="Customer" name="customer_name" context="{'group_by':'customer_name'}"/>
+                    <filter string="Room" name="room_id" context="{'group_by':'room_id'}"/>
+
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="room_accommodations_kanban_view" model="ir.ui.view">
+        <field name="name">folk.room.accommodations.kanban</field>
+        <!-- any name  -->
+        <field name="model">folk.rooms.accommodations</field>
+        <!-- model name  -->
+        <field name="arch" type="xml">
+            <kanban quick_create="false">
+                <field name="room_id"/>
+                <field name="responsible_id"/>
+                <field name="customer_name"/>
+                <field name="bed_reserve_from"/>
+                <field name="bed_reserve_to"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                         <li>Room:
+                                            <field name="room_id"/>
+                                        </li>
+                                        <li>Responsible:
+                                            <field name="responsible_id"/>
+                                        </li>
+
+                                        <li>Customer :
+                                            <field name="customer_name"/>
+                                        </li>
+                                         <li>Reserve From :
+                                            <field name="bed_reserve_from"/>
+                                        </li>
+                                         <li>Reserve To :
+                                            <field name="bed_reserve_to"/>
+                                        </li>
+                                         <li>Status :
+                                            <field name="status"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="rooms_accommodations_action" model="ir.actions.act_window">
+        <field name="name">Room Accommodations</field>
+        <field name="res_model">folk.rooms.accommodations</field>
+        <field name="view_mode">tree,form,search,kanban</field>
+
+    </record>
+    <menuitem id="room_accommodations"
+              name="Room Accommodations Menu"
+              parent="room_menu"
+              action="rooms_accommodations_action"
+              sequence="40"/>
+</odoo>

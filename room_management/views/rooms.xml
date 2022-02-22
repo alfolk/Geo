@@ -1,0 +1,180 @@
+<odoo>
+    <data>
+        <record id="rooms_tree_views" model="ir.ui.view">
+            <field name="name">Rooms Tree View</field>
+            <field name="model">folk.rooms</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                    <field name="room_no"/>
+                    <field name="floor_id"/>
+                    <field name="room_type"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="rooms_form_views" model="ir.ui.view">
+            <field name="name">Rooms Form View</field>
+            <field name="model">folk.rooms</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field
+                                name="image"
+                                widget="image"
+                                class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name" string="Name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+
+                            <group string="Basic Information">
+
+
+                                <field name="room_no"/>
+                                <field name="floor_id"/>
+                                <field name="room_type"/>
+
+                                <!--                                <field name="type_id"/>-->
+
+                            </group>
+
+                            <group string="About Room">
+                                 <field name="status"/>
+                                <field name="responsible_id"/>
+<!--                                <field name="room_capacity_num"/>-->
+
+<!--                                <field name="bed_capacity_num"/>-->
+
+
+
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="More Information">
+                                <field name="bed_id"/>
+                            </page>
+<!--                             <page string="More Information">-->
+<!--                                <field name="room_line_id"/>-->
+
+<!--                            </page>-->
+                            <page string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+
+        </record>
+        <!--         add custom pivot view-->
+        <record id="room_pivot_view" model="ir.ui.view">
+            <field name="model">folk.rooms</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                    <field name="floor_id"/>
+                    <field name="room_no"/>
+                </pivot>
+            </field>
+        </record>
+        <record id="room_search_view" model="ir.ui.view">
+            <field name="name">folk.room.search</field>
+            <field name="model">folk.rooms</field>
+            <field name="arch" type="xml">
+                <search string="Rooms">
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                    <field name="floor_id"/>
+                    <separator/>
+
+                    <group expand="1" string="Group By">
+                        <filter string="Floor" name="floor_id" context="{'group_by':'floor_id'}"/>
+                        <!--                        <filter string="Type" name="type_id" context="{'group_by':'type_id'}"/>-->
+                        <filter string="Name" name="name" context="{'group_by':'name'}"/>
+                        <filter string="Responsible" name="responsible_id" context="{'group_by':'responsible_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="room_kanban_view" model="ir.ui.view">
+            <field name="name">room.kanban</field>
+            <field name="model">folk.rooms</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban" js_class="hr_employee_kanban" sample="1">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                <field name="image" widget="image" class="o_kanban_image_fill_left"
+                                       options="{'zoom': false, 'zoom_delay': 1000, 'background': true,'size': [150, 100], 'preventClicks': false}"/>
+
+                                <div class="oe_kanban_details">
+                                    <ul style="float:right">
+                                        <li>Name:
+                                            <field name="name"/>
+                                        </li>
+                                        <li>Floor :
+                                            <field name="floor_id"/>
+
+                                        </li>
+                                        <li>Responsible :
+                                            <field name="responsible_id"/>
+                                        </li>
+                                        <li>No Of Beds :
+                                            <field name="beds_no"/>
+                                        </li>
+
+                                    </ul>
+
+                                    <!--                                    <div>-->
+                                    <!--                                        <button-->
+                                    <!--                                                type="object"-->
+                                    <!--                                                string="Available"-->
+                                    <!--                                                name="set_room_status_occupied"-->
+                                    <!--                                                class="oe_kanban_status oe_kanban_status_green "-->
+                                    <!--                                        >-->
+                                    <!--                                        </button>-->
+                                    <!--                                        <button-->
+                                    <!--                                                type="object"-->
+                                    <!--                                                string="occupied"-->
+                                    <!--                                                name="set_room_status_available"-->
+                                    <!--                                                class="oe_kanban_status oe_kanban_status_red "-->
+                                    <!--                                        >-->
+                                    <!--                                        </button>-->
+                                    <!--                                    </div>-->
+                                </div>
+
+
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="rooms_action" model="ir.actions.act_window">
+            <field name="name">Rooms</field>
+            <field name="res_model">folk.rooms</field>
+            <field name="view_mode">tree,form,search,pivot,kanban</field>
+
+        </record>
+
+        <menuitem id="room_root" name="Rooms"/>
+        <menuitem id="room_menu"
+                  name="Rooms Menu"
+                  parent="room_root"
+                  action="rooms_action"
+                  sequence="10"/>
+    </data>
+</odoo>

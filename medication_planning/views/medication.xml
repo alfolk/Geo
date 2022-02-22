@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_medication" model="report.paperformat">
+            <field name="name">paperformat_medication</field>
+            <field name="default" eval="False"/>
+            <field name="format">custom</field>
+            <field name="page_width">215</field>
+            <field name="page_height">280</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">1</field>
+        </record>
+        <template id="medication_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="article">
+                        <div class="page">
+                            <div class="oe_structure"/>
+
+                            <h3 class="text-center">
+                                استمارة تسجيل مخطط الدواء
+                            </h3>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                            <div class="row justify-content-end">
+                                <t>
+                                    <t/>
+                                    <div class="page">
+                                        <table style="width:100%;border: 1px bold;">
+                                            <thead>
+                                                <tr width='300px'
+                                                    style="border: 1px solid black;font-size: 20px">
+                                                    <th class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        أسم الشخص
+                                                    </th>
+                                                    <th width='50px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        فترة/مدة العلاج
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="invoice_tbody">
+                                                <t t-foreach="o.line_id" t-as="l">
+                                                    <tr>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span t-field="o.employee_id.name"/>
+
+                                                        </td>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                                                       <span t-field="o.medication_duration"/>
+
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                        <br></br>
+                                        <br></br>
+
+                                        <table style="width:100%;border: 1px bold;">
+                                            <thead>
+                                                <tr width='300px'
+                                                    style="border: 1px solid black;font-size: 20px">
+                                                    <th class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        أسم العلاج
+                                                    </th>
+                                                    <th class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                    الوحدة
+                                                    </th>
+                                                    <th width='50px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        نوعه
+
+                                                    </th>
+                                                    <th width='200px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        الكمية
+                                                    </th>
+                                                    <th width='50px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        الموظف
+                                                    </th>
+                                                    <th width='50px' class="text-center"
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        ملاحظات
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="invoice_tbody">
+                                                <t t-foreach="o.line_id" t-as="l">
+                                                    <tr>
+
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.medication.name"/>
+                                                        </td>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.product_uom_id.name"/>
+                                                        </td>
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.medication.pro_type"/>
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.quantity"/>
+
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px" t-esc="l.employee.name"
+                                                            />
+
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.notes"
+                                                            />
+                                                        </td>
+
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                        <br></br>
+                                        <br></br>
+                                        <table style="width:100%;border: 1px bold;">
+                                            <thead>
+                                                <tr
+                                                        style="border: 1px solid black;font-size: 20px">
+                                                    <th class="text-center" width='200px'
+                                                        style="border: 1px solid black;font-size: 12.5px">
+
+                                                        اسم العلاج
+                                                    </th><th class="text-center" width='200px'
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                    الوحدة
+                                                 </th>
+                                                    <th class="text-center" width='200px'
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        اليوم بالساعة
+                                                    </th>
+                                                    <th class="text-center" width='200px'
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        الكمية
+                                                    </th>
+                                                    <th class="text-center" width='200px'
+                                                        style="border: 1px solid black;font-size: 12.5px">
+                                                        توقيع المشرف
+                                                    </th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="invoice_tbody">
+                                                <t t-foreach="o.line_ids" t-as="l">
+                                                    <tr>
+
+                                                        <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span
+                                                                    t-esc="l.medication.name"/>
+                                                        </td> <td class="text-left" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span
+                                                                    t-esc="l.product_uom_id.name"/>
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.day"/>
+
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px"
+                                                                  t-esc="l.quantity"/>
+
+                                                        </td>
+                                                        <td class="text-center" width='200px'
+                                                            style="border: 1px solid black;">
+                                                            <span style="font-size: 13px" t-esc="l.employee.name"
+                                                            />
+
+                                                        </td>
+
+
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+
+
+                                        <br/>
+                                        <br/>
+
+
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+        </template>
+        <report
+                id="paperformat_medication_menu_id"
+                model="medication.planning"
+                report_type="qweb-pdf"
+                string="print"
+                name="medication_planning.medication_report"
+                file="medication_planning.medication_report"
+        />
+
+    </data>
+</odoo>

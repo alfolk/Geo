@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="alfolk_clean_report_new">
+        <t t-call="web.html_container">
+<!--            <t t-call="web.internal_layout">-->
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <h3 class="text-center" style="color:#191970 ; font-family:serif">استمارة خاصة بمتابعة أعمال النظافة</h3>
+                        <br/>
+                        <div class="row mt32">
+                            <div class="col-3">
+                                <strong>بداية من تاريخ:</strong>
+                                <p t-esc="o.from_date"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>الي تاريخ:</strong>
+                                <p t-esc="o.to_date"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>الدور:</strong>
+                                <p t-esc="o.floor_id.name"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>اسم العامل</th>
+                                    <th>التوقيت</th>
+                                    <th>الاماكن</th>
+                                    <th>توقيع العامل</th>
+                                    <th>توقيع المشرف</th>
+                                    <th>ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.line_ids" t-as="l">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="l.customer_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.time_clean"/>
+                                        </td>
+                                         <td>
+                                            <span t-esc="l.places_name"/>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.responsible_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.notes"/>
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+<!--        </t>-->
+    </template>
+
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="alfolk_personal_expense_report">
+       <t t-call="web.html_container">
+            <t t-set="data_report_margin_top" t-value="12"/>
+            <t t-set="data_report_header_spacing" t-value="9"/>
+            <t t-set="data_report_dpi" t-value="110"/>
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                    <h3 class="text-center"  style="color:#191970 ; font-family:serif">استمارة المصروف الشخصى</h3>
+<br></br>
+                        
+                    <div class="row mt32">
+                        <div class="col-3">
+                            <strong>بداية من تاريخ:</strong>
+                            <p t-esc="o.date_from"/>
+                        </div>
+                        <div class="col-3">
+                           <strong>الي تاريخ:</strong>
+                            <p t-esc="o.date_to"/>
+                        </div><div class="col-3">
+                           <strong>العميل:</strong>
+                            <p t-esc="o.customer.name"/>
+                        </div><div class="col-3">
+                           <strong>المبلغ المدفوع(الذى تركته الأسرة):</strong>
+                            <p t-esc="o.computereceiveamount()"/>
+                        </div><div class="col-3">
+                           <strong>المبلغ المتبقي:</strong>
+                            <p t-esc="o.computeresidualamount()"/>
+                        </div><div class="col-3">
+                           <strong>الخزينه:</strong>
+                            <p t-esc="o.treasury.name"/>
+                        </div>
+                    </div>
+                        <br></br>
+
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <th>التاريخ</th>
+                                <th>المبلغ المصروف</th>
+                                <th>مقابل(الاشياء)</th>
+                                <th>المشرف</th>
+                                <th>ملاحظات</th>
+
+
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <t t-foreach="o.line_ids" t-as="l" >
+
+                                <tr>
+                                    <td><span t-esc="l.date"/></td>
+                                    <td><span t-esc="l.expense_amount"/></td>
+                                    <td><span t-esc="l.description"/></td>
+                                    <td><span t-esc="l.employee"/></td>
+                                    <td><span t-esc="l.note"/></td>
+
+
+
+
+
+
+                                </tr>
+                            </t>
+                            </tbody>
+                        </table>
+
+                    </div>
+        </t>
+            </t>
+       </t>
+    </template>
+     <template id="bank_report_layout">
+    <!-- Multicompany -->
+    <t t-if="not o and doc">
+        <t t-set="o" t-value="doc"/>
+    </t>
+    <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"></t>
+    </t>
+    <t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"></t>
+    </t>
+
+    <t t-call="cash.bank_report_layout_header" />
+    <t t-raw="0" />
+</template>
+
+<template id="bank_report_layout_header">
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-3">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+            </div>
+        </div>
+        <div class="row zero_min_height">
+            <div class="col-xs-12">
+                <div style="border-bottom: 1px solid black;"></div>
+            </div>
+        </div>
+
+        <br/>
+    </div>
+</template>
+</odoo>

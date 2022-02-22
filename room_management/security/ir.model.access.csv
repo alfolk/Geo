@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+folk_rooms,folk rooms,model_folk_rooms,,1,1,1,1
+folk_floor,folk floor,model_folk_floor,,1,1,1,1
+folk_bed,folk bed,model_folk_beds,,1,1,1,1
+folk_rooms_accommodations,folk rooms accommodations,model_folk_rooms_accommodations,,1,1,1,1
+folk_clean,folk clean,model_folk_clean,,1,1,1,1
+alfolk_clean_report,alfolk clean report,model_alfolk_clean_report,,1,1,1,1
+alfolk_clean_report_line,alfolk clean report line,model_alfolk_clean_report_line,,1,1,1,1

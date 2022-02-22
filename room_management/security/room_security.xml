@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+        <record id="room_groups_category" model="ir.module.category">
+            <field name="name">Folk Rooms</field>
+        </record>
+
+        <record id="room_normal_group" model="res.groups">
+        <field name="name">Room Normal User</field>
+         <field name="category_id" ref="room_groups_category"/>
+        </record>
+         <record id="room_manager_group" model="res.groups">
+        <field name="name">Room Manager User</field>
+              <field name="category_id" ref="room_groups_category"/>
+             <field name="implied_ids" eval="[(4,ref('room_normal_group'))]"/>
+        </record>
+    </data>
+</odoo>

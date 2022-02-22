@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_form_design,form_design,model_form_design,base.group_user,1,0,0,0
+access_form_design_manager,form_design,model_form_design,form_design.group_form_manager,1,1,1,1
+access_form_design_line,form design line,model_form_design_line,base.group_user,1,0,0,0
+access_form_design_line_manager,form design line,model_form_design_line,form_design.group_form_manager,1,1,1,1
+access_form_apply_,form design line,model_form_apply,base.group_user,1,0,0,0
+access_form_apply_manager,form design line,model_form_apply,form_design.group_form_user,1,1,1,1
+access_form_apply_line,form apply line,model_form_apply_line,base.group_user,1,0,0,0
+access_form_apply_line_manager,form apply line,model_form_apply_line,form_design.group_form_user,1,1,1,1
+access_form_line_answer,form.line.answer,model_form_line_answer,base.group_user,1,0,0,0
+access_form_line_answer_,form.line.answer,model_form_line_answer,form_design.group_form_user,1,1,1,1
+access_form_line_matrix,form.apply.line.matrix,model_form_apply_line_matrix,base.group_user,1,0,0,0
+access_form_line_matrix_manager,form.apply.line.matrix,model_form_apply_line_matrix,form_design.group_form_user,1,1,1,1

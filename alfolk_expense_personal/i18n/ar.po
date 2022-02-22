@@ -1,0 +1,130 @@
+#. module: alfolk_expense_personal
+#: model:ir.model.fields.selection,name:alfolk_expense_personal.selection__alfolk_expense_personal__state__draft
+msgid "Draft"
+msgstr "جديد"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields.selection,name:alfolk_expense_personal.selection__alfolk_expense_personal__state__confirm
+msgid "Confirm"
+msgstr "المنتهية"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__customer
+msgid "Customer"
+msgstr "العميل"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__treasury
+msgid "Treasury"
+msgstr "الخزينة"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__code
+msgid "Reference"
+msgstr "الكود"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__description
+msgid "Expense For"
+msgstr "(الاشياء)مقابل"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__note
+msgid "Note"
+msgstr "ملاحظات"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__account_id
+msgid "Account"
+msgstr "الحساب"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__account_from
+msgid "From Account"
+msgstr "من حساب"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__account_to
+msgid "From Account"
+msgstr "الي حساب"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__employee
+msgid "Employee"
+msgstr "المشرف"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_expense_personal__payment_type
+msgid "Type"
+msgstr "النوع"
+
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields.selection,name:alfolk_expense_personal.selection__alfolk_expense_personal__payment_type__receive_money
+msgid "Receive Money"
+msgstr "استلام نقدية"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields.selection,name:alfolk_expense_personal.selection__alfolk_expense_personal__payment_type__expense_money
+msgid "Expense Money"
+msgstr "صرف نقدية"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields.selection,name:alfolk_expense_personal.selection__alfolk_expense_personal__payment_type__transfer_money
+msgid "Transfer Money"
+msgstr "تحويل نقدية"
+
+#. module: alfolk_expense_personal
+#: model_terms:ir.ui.view,arch_db:alfolk_expense_personal.alfolk_expense_personal_form_view
+msgid "Confirm"
+msgstr "تأكيد"
+
+
+#. module: alfolk_expense_personal
+#: model:ir.actions.act_window,name:alfolk_expense_personal.alfolk_expense_personal_action_window
+#: model:ir.ui.menu,name:alfolk_expense_personal.alfolk_expense_personal_menu_root
+msgid "Personal Expense"
+msgstr "المصروفات الشخصية"
+
+#. module: alfolk_expense_personal
+#: model:ir.actions.act_window,name:alfolk_expense_personal.alfolk_personal_expense_report_action_window
+#: model:ir.ui.menu,name:alfolk_expense_personal.alfolk_personal_expense_report_menu_root
+msgid "Personal Expense Report"
+msgstr "تقرير المصروفات الشخصية"
+
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_personal_expense_report__date_from
+msgid "Start Date"
+msgstr "بداية من تاريخ"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_personal_expense_report__date_to
+msgid "End Date"
+msgstr "الي تاريخ"
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_personal_expense_report__treasury
+msgid "Treasury"
+msgstr "الخزينة"
+
+
+#. module: alfolk_expense_personal
+#: model:ir.model.fields,field_description:alfolk_expense_personal.field_alfolk_personal_expense_report__customer
+msgid "Customer"
+msgstr "العميل"
+
+#. module: alfolk_expense_personal
+#: model_terms:ir.ui.view,arch_db:alfolk_expense_personal.alfolk_expense_personal_form
+msgid "Confirm"
+msgstr "تأكيد"
