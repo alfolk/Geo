@@ -40,9 +40,10 @@
                     <group>
                         <field name="employee"/>
                         <field name="medication"/>
+                                                <field name="quantity" force_save="1"/>
+
                         <field name="product_uom_id"/>
                         <field name="day"/>
-                        <field name="quantity" force_save="1"/>
                         <field name="quantity_received" invisible="1" force_save="1"/>
                         <field name="quantity_re" invisible="1" force_save="1"/>
                         <field name="products" invisible="1"/>
@@ -103,11 +104,12 @@
                         <group>
                             <field name="person"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
+                                                     <field name="warehouse"
+                                   attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
+
                             <field name="medication_duration"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
-                            <field name="warehouse"
-                                   attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
-                            <field name="location" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
+                             <field name="location" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
                             <field name="location_des" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
                             <field name="picking_type" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
                             <field name="company_id" invisible="1"/>
@@ -125,10 +127,11 @@
                                         <tree editable="bottom">
                                             <field name="medication"
                                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))],'required':1}"/>
+                                                                        <field name="quantity"
+                                                   attrs="{'readonly':[('state','in',('close','picking','receive_med'))],'required':1}"/>
                                             <field name="product_uom_id"
                                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))],'required':1}"/>
-                                            <field name="quantity"
-                                                   attrs="{'readonly':[('state','in',('close','picking','receive_med'))],'required':1}"/>
+
                                             <field name="quantity_received" readonly="1" force_save="1"/>
                                             <field name="quantity_returned" readonly="1" force_save="1"/>
                                             <field name="quantity_re"/>

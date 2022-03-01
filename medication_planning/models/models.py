@@ -120,7 +120,7 @@ class alfolk_medication_chart_record(models.Model):
             picking = self.env['stock.picking'].create({
                 'partner_id': record.person.id,
                 'location_id': record.warehouse.lot_stock_id.id,
-                'location_dest_id': record.warehouse.lot_stock_id.id,
+                'location_dest_id': record.person.property_stock_customer.id,
                 'picking_type_id': record.warehouse.out_type_id.id,
                 'med_id': record.id,
                 'state': 'confirmed',
@@ -133,7 +133,7 @@ class alfolk_medication_chart_record(models.Model):
                     'product_uom_qty': line.quantity,
                     'product_uom': line.product_uom_id.id,
                     'location_id': record.warehouse.lot_stock_id.id,
-                    'location_dest_id': record.warehouse.out_type_id.id,
+                    'location_dest_id': record.person.property_stock_customer.id,
                     'name': '/',
 
                 })
@@ -146,7 +146,7 @@ class alfolk_medication_chart_record(models.Model):
                 if x.quantity_re > 0:
                     picking = self.env['stock.picking'].create({
                         'partner_id': record.person.id,
-                        'location_id': record.warehouse.lot_stock_id.id,
+                        'location_id': record.person.property_stock_customer.id,
                         'location_dest_id': record.warehouse.lot_stock_id.id,
                         'picking_type_id': record.warehouse.in_type_id.id,
                         'med_id': record.id,
@@ -164,7 +164,7 @@ class alfolk_medication_chart_record(models.Model):
                                     'product_id': line.medication.id,
                                     'product_uom_qty': line.quantity_re,
                                     'product_uom': line.product_uom_ids.id,
-                                    'location_id': record.warehouse.lot_stock_id.id,
+                                    'location_id': record.person.property_stock_customer.id,
                                     'location_dest_id': record.warehouse.lot_stock_id.id,
                                     'name': '/',
 
@@ -201,7 +201,7 @@ class alfolk_medication_chart_record(models.Model):
                                  compute='_compute_company_id')
 
     person = fields.Many2one('res.partner', string='Person', store=True, required=True)
-    medication_duration = fields.Char('Medicine Duration', store=True, required=True)
+    medication_duration = fields.Char('Medicine Duration', store=True)
     line_id = fields.One2many('medication.planning.line', 'line_id')
     line_ids = fields.One2many('medication.planning.day', 'line_ids')
     state = fields.Selection(selection=_STATES, string='Status', index=True, track_visibility='onchange', required=True,
