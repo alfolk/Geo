@@ -122,11 +122,6 @@ msgstr "المشرف"
 
 
 #. module: medication_planning
-#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
-msgid "Medicine Quantity Ordered"
-msgstr "الكمية "
-
-#. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_received
 msgid "Medicine Quantity Received"
 msgstr "الكميةالمصروفة"
