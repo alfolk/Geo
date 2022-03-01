@@ -16,8 +16,10 @@ msgstr "نوع الدواء"
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_product_template__medication
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__medication
 msgid "Medication"
 msgstr "دواء"
+
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning__medication_duration
@@ -44,8 +46,6 @@ msgstr "الكمية المطلوبة"
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_returned
 msgid "Qty Returned"
 msgstr "الكميةالمرتجعة"
-
-
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_re
@@ -121,7 +121,6 @@ msgid "Employee"
 msgstr "المشرف"
 
 
-
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
 msgid "Medicine Quantity Ordered"
@@ -133,12 +132,6 @@ msgid "Medicine Quantity Received"
 msgstr "الكميةالمصروفة"
 
 
-
-#. module: medication_planning
-#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__medication
-msgid "Medication"
-msgstr "العلاج"
-
 #. module: medication_planning
 #: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
 msgid "Medicament Times"
@@ -148,12 +141,3 @@ msgstr "مواعيد تلقي العلاج"
 #: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
 msgid "Medicament Information"
 msgstr "العلاج"
-
-
-
-#. module: medication_planning
-#: model:ir.actions.act_window,name:medication_planning.medication_planning_action_window
-#: model:ir.ui.menu,name:medication_planning.medication_planning_menu_root
-msgid "Alfolk Medication Chart Record"
-msgstr "تسجيل مخطط دواء"
-
