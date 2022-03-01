@@ -6,3 +6,7 @@ folk_rooms_accommodations,folk rooms accommodations,model_folk_rooms_accommodati
 folk_clean,folk clean,model_folk_clean,,1,1,1,1
 alfolk_clean_report,alfolk clean report,model_alfolk_clean_report,,1,1,1,1
 alfolk_clean_report_line,alfolk clean report line,model_alfolk_clean_report_line,,1,1,1,1
+alfolk_bed_report,alfolk bed report,model_alfolk_bed_report,,1,1,1,1
+alfolk_bed_report_line,alfolk bed report line,model_alfolk_bed_report_line,,1,1,1,1
+
+

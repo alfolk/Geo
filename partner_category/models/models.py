@@ -6,7 +6,7 @@ from datetime import date
 
 
 class res_partner_category(models.Model):
-    _name = 'alfolk.partner.category'
+    _name = 'partner.category'
     _description = 'Partner Category'
     _rec_name = 'name'
 
@@ -18,8 +18,8 @@ class res_partner_category(models.Model):
 
 class res_partner_edit(models.Model):
     _inherit = 'res.partner'
-    category = fields.Many2one('alfolk.partner.category', store=True)
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female')], store=True)
+    category = fields.Many2one('partner.category', "Category",store=True)
+    gender = fields.Selection([('male', 'Male'), ('female', 'Female')], "Gender",store=True)
     father_name = fields.Char('Father Name', store=True)
     mother_name = fields.Char('Mother Name', store=True)
     date_of_birth = fields.Date('Birth Of Date', store=True)

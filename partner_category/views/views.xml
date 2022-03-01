@@ -2,7 +2,7 @@
 
        <record id="category_customer" model="ir.ui.view">
         <field name="name">Partner Category</field>
-        <field name="model">alfolk.partner.category</field>
+        <field name="model">partner.category</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -17,7 +17,7 @@
 
     <record id="category_customer_tree" model="ir.ui.view">
         <field name="name">category customer</field>
-        <field name="model">alfolk.partner.category</field>
+        <field name="model">partner.category</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -27,11 +27,11 @@
     <record id="category_customer_action" model="ir.actions.act_window">
         <field name="name">Partner Category</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">alfolk.partner.category</field>
+        <field name="res_model">partner.category</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="partner_category" name="Partner Category"
+    <menuitem id="partner_category_menu_root" name="Partner Category"
               action="category_customer_action" parent="sale.sale_order_menu"/>
 
     <record id="partner_category_menu" model="ir.ui.view">

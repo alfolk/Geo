@@ -15,7 +15,7 @@ class ApplyFormDesign(models.Model):
          'This form already exist'),
 
     ]
-    category = fields.Many2one('alfolk.partner.category','Partner Category',related='form_id.category')
+    category = fields.Many2one('partner.category','Partner Category',related='form_id.category')
     form_id = fields.Many2one('form.design', 'Form', store=True, index=True, tracking=True, required=1)
     partner_id = fields.Many2one('res.partner', 'Partner', domain="[('category','=',category)]", store=True, index=True, tracking=True, required=1)
     apply_ids = fields.One2many('form.apply.line', 'apply_id', store=True, index=True, tracking=True)
@@ -88,9 +88,9 @@ class ApplyFormDesign(models.Model):
                 'res_model': 'form.apply.line',
                 'view_mode': 'form',
                 'view_id': self.env.ref('form_design.form_apply_line_form_view2').id,
-                'res_id': self.apply_ids.filtered(lambda line: not line.answer)[0].id,
+                'res_id': self.apply_ids.filtered(lambda line: not line.answer or line.question_type == 'matrix')[0].id,
                 'target': 'new',
-                'domain': [('id', '=', self.apply_ids[0].id)],
+                'domain': [('id', '=', self.apply_ids.filtered(lambda line: not line.answer or line.question_type == 'matrix')[0].id)],
                 'context': self.env.context,
             }
 
@@ -115,6 +115,21 @@ class FormApplyLine(models.Model):
     _name = 'form.apply.line'
     _description = 'Form Apply Line'
     _order = 'id'
+
+    def save_and_close(self):
+        return {'type': 'ir.actions.act_window_close'}
+
+    def compute_has_next(self):
+        for record in self:
+            has_next = False
+            ids = record.apply_id.apply_ids.mapped('id')
+            ids.sort()
+            if record._origin.id in ids:
+                next_index = ids.index(record._origin.id) + 1
+                if next_index < len(ids):
+                    has_next = True
+            record.has_next = has_next
+    has_next = fields.Boolean(compute='compute_has_next')
 
     @api.onchange('form_line_id')
     def _onchange_form_line(self):

@@ -4,6 +4,7 @@ $x2many_2d_matrix_max_height: 450px;
     .table-responsive {
         max-height: $x2many_2d_matrix_max_height;
         overflow-y: auto;
+
     }
 
     .o_x2many_2d_matrix.o_list_view {
@@ -31,8 +32,7 @@ $x2many_2d_matrix_max_height: 450px;
                 }
 
                 > td {
-                    text-align: left;
-
+                    text-align: center;
                     &:first-child {
                         position: sticky;
                         left: 0;
@@ -50,6 +50,9 @@ $x2many_2d_matrix_max_height: 450px;
                         border-left-style: solid;
                         box-shadow: -1px 5px 10px $gray-300;
                     }
+                    &.o_list_text {
+                  white-space:nowrap;
+                }
                 }
             }
         }

@@ -9,9 +9,11 @@ _STATES = [
 ]
 
 
+
 class alfolk_expense_personal(models.Model):
     _name = 'alfolk.expense.personal'
-    _description = 'Alfolk Expense Personal'
+
+    _description = 'Expense Personal'
     _inherit = ['mail.thread']
     _rec_name = 'code'
 

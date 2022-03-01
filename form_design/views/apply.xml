@@ -41,6 +41,7 @@
                             <field name="matrix_answer_type" readonly="1" force_save="1" invisible="1"/>
 
                             <field name="form_id" invisible="1" force_save="1"/>
+
                         </tree>
                     </field>
 
@@ -355,7 +356,10 @@
                 </sheet>
 
                 <footer>
-                    <button name="confirm" type="object" string="Next"/>
+                    <field name="has_next" invisible="1"/>
+                    <button name="confirm" type="object" class="btn-primary" attrs="{'invisible':[('has_next','=',False)]}" string="Next"/>
+                    <button name="confirm" type="object" class="btn-primary" attrs="{'invisible':[('has_next','=',True)]}" string="Done"/>
+                    <button name="save_and_close" type="object" string="Save and Close"/>
                     <button string="Discard" special="cancel" class="btn-secondary" close="1"/>
                 </footer>
             </form>

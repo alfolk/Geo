@@ -303,7 +303,7 @@ class alfolk_medication_chart_record_day(models.Model):
         else:
             return {'domain': False}
 
-    product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure', store=True)
+    product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure',required=True, store=True)
 
     @api.depends('quantity', 'line_ids', 'medication')
     def _compute_quantity(self):

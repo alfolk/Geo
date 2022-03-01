@@ -1,3 +1,5 @@
+from datetime import date
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from odoo.exceptions import UserError
@@ -15,23 +17,23 @@ class BedsAlfolk(models.Model):
     notes = fields.Text(string="Notes", store=True, tracking=True)
     rooms_ids = fields.Many2one('folk.rooms', string="Room", store=True, tracking=True)
     bed_status = fields.Selection([("available", "Available"),
-                               ("occupied", "Occupied")],
-                              "Status",
-                              default="available", compute="check_bed_availability", tracking=True)
+                                   ("occupied", "Occupied")],
+                                  "Status",
+                                  default="available", compute="check_bed_availability", tracking=True)
 
     # bed_capacity = fields.Integer(string="Beds  Capacity", store=True, tracking=True)
 
+    def check_bed_availability(self):
+        for record in self:
+            check_date = date.today()
+            available_bed = self.env['folk.rooms.accommodations'].search(
+                [('bed_id', '=', record.id)])
+            if available_bed:
+                for a in available_bed:
+                    if a.bed_reserve_to < check_date:
+                        record.bed_status = 'available'
+                    else:
+                        record.bed_status = 'occupied'
+            else:
 
-
-
-    # def check_bed_availability(self):
-    #     for record in self:
-    #         available_bed = self.env['folk.rooms.accommodations'].search([('bed_id','=',record.id)])
-    #             if available_bed:
-    #                 bed_status = 'available'
-    #             else:
-    #                 b.bed_status = 'occupied'
-
-
-
-
+                record.bed_status = 'available'

@@ -12,7 +12,7 @@ class FormDesign(models.Model):
     def compute_form_fill_in(self):
         for record in self:
             record.fill_count = len(record.form_ids)
-    category = fields.Many2one('alfolk.partner.category','Partner Category', store=True)
+    category = fields.Many2one('partner.category','Partner Category', store=True)
     name = fields.Char('Form Title', required=True, translate=True, tracking=True, store=True, index=True, )
     color = fields.Integer('Color Index', default=0)
     fill_count = fields.Integer('Form Fill In count', default=0, compute='compute_form_fill_in')

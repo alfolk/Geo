@@ -1,0 +1,64 @@
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_partner_category__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_partner_category__category_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: partner_category
+#: model:ir.actions.act_window,name:partner_category.partner_category_action_window
+#: model:ir.ui.menu,name:partner_category.partner_category_menu_root
+msgid "Partner Category"
+msgstr "تصنيف العملاء"
+
+#. module: partner_category
+#: model:ir.model.fields.selection,name:partner_category.selection__partner_category__category_type__resident
+msgid "resident"
+msgstr "مقيم"
+
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__category
+msgid "Category"
+msgstr "تصنيف العميل"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__gender
+msgid "Gender"
+msgstr "النوع"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__father_name
+msgid "Father Name"
+msgstr "أسم اﻷب"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__mother_name
+msgid "Mother Name"
+msgstr "أسم اﻷم"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__date_of_birth
+msgid "Birth Of Date"
+msgstr "تاريخ الميلاد"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__identification_id
+msgid "Identification ID"
+msgstr "رقم البطاقة"
+
+#. module: partner_category
+#: model:ir.model.fields,field_description:partner_category.field_res_partner__age
+msgid "Age"
+msgstr "العمر"
+
+#. module: partner_category
+#: model_terms:ir.ui.view,arch_db:partner_category.res_partner_form
+msgid "Personal Information"
+msgstr "المعلومات الشخصية"
+
+
+
