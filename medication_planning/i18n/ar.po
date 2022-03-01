@@ -36,6 +36,7 @@ msgstr " اسم العلاج"
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__quantity
 msgid "Quantity"
 msgstr "الكمية المطلوبة"
 
@@ -46,8 +47,6 @@ msgstr "الكميةالمرتجعة"
 
 
 
-
-
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity_re
 msgid "Qty To Return"
@@ -55,18 +54,10 @@ msgstr "ارتجاع"
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__product_uom_id
-msgid "Unit of Measure"
-msgstr "الوحدة"
-
-#. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__product_uom_ids
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__product_uom_id
 msgid "Unit of Measure"
 msgstr "الوحدة"
-
-#. module: medication_planning
-#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
-msgid "Quantity"
-msgstr "الكمية المطلوبة"
 
 #. module: medication_planning
 #: model_terms:ir.ui.view,arch_db:medication_planning.medication_planning_form
@@ -129,15 +120,7 @@ msgstr "التاريخ والساعة"
 msgid "Employee"
 msgstr "المشرف"
 
-#. module: medication_planning
-#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__product_uom_id
-msgid "Unit of Measure"
-msgstr "الوحدة"
 
-#. module: medication_planning
-#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__quantity
-msgid " Quantity"
-msgstr "الكمية"
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity
@@ -173,3 +156,4 @@ msgstr "العلاج"
 #: model:ir.ui.menu,name:medication_planning.medication_planning_menu_root
 msgid "Alfolk Medication Chart Record"
 msgstr "تسجيل مخطط دواء"
+
