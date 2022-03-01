@@ -4,10 +4,7 @@
 
     'summary': """
       free create and fill forms""",
-
-    'description': """
-    """,
-
+    'description': """""",
     'author': "Alzahraa Gamal",
     'website': "",
     'category': 'Uncategorized',
