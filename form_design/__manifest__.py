@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 {
     'name': "form_design",
-
     'summary': """
       free create and fill forms""",
     'description': """""",
