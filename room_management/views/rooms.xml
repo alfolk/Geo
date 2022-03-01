@@ -131,28 +131,13 @@
                                         <li>Responsible :
                                             <field name="responsible_id"/>
                                         </li>
-                                        <li>No Of Beds :
-                                            <field name="beds_no"/>
-                                        </li>
+<!--                                        <li>No Of Beds :-->
+<!--                                            <field name="beds_no"/>-->
+<!--                                        </li>-->
 
                                     </ul>
 
-                                    <!--                                    <div>-->
-                                    <!--                                        <button-->
-                                    <!--                                                type="object"-->
-                                    <!--                                                string="Available"-->
-                                    <!--                                                name="set_room_status_occupied"-->
-                                    <!--                                                class="oe_kanban_status oe_kanban_status_green "-->
-                                    <!--                                        >-->
-                                    <!--                                        </button>-->
-                                    <!--                                        <button-->
-                                    <!--                                                type="object"-->
-                                    <!--                                                string="occupied"-->
-                                    <!--                                                name="set_room_status_available"-->
-                                    <!--                                                class="oe_kanban_status oe_kanban_status_red "-->
-                                    <!--                                        >-->
-                                    <!--                                        </button>-->
-                                    <!--                                    </div>-->
+
                                 </div>
 
 

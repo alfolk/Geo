@@ -56,45 +56,45 @@
     </record>
 
 
-      <record id="floor_kanban_view" model="ir.ui.view">
-            <field name="name">folk.floor.kanban</field>
-            <!-- any name  -->
-            <field name="model">folk.floor</field>
-            <!-- model name  -->
-            <field name="arch" type="xml">
-                <kanban quick_create="false">
-                     <field name="name"/>
-                     <field name="room_capacity"/>
-                    <templates>
-                        <t t-name="kanban-box">
+<!--      <record id="floor_kanban_view" model="ir.ui.view">-->
+<!--            <field name="name">folk.floor.kanban</field>-->
+<!--            &lt;!&ndash; any name  &ndash;&gt;-->
+<!--            <field name="model">folk.floor</field>-->
+<!--            &lt;!&ndash; model name  &ndash;&gt;-->
+<!--            <field name="arch" type="xml">-->
+<!--                <kanban quick_create="false">-->
+<!--                     <field name="name"/>-->
+<!--                     <field name="room_capacity"/>-->
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-box">-->
 
-                            <div class="oe_kanban_global_click">
-                                <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
-                                    <div class="oe_kanban_details">
-                                            <ul>
-                                                <li>Floor:
-                                                    <field name="name"/>
-                                                </li>
+<!--                            <div class="oe_kanban_global_click">-->
+<!--                                <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">-->
+<!--                                    <div class="oe_kanban_details">-->
+<!--                                            <ul>-->
+<!--                                                <li>Floor:-->
+<!--                                                    <field name="name"/>-->
+<!--                                                </li>-->
 
-                                            <li>Room Capacity :
-                                                <field name="room_capacity"/>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+<!--                                            <li>Room Capacity :-->
+<!--                                                <field name="room_capacity"/>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </kanban>-->
+<!--            </field>-->
+<!--        </record>-->
 
 
 
     <record id="floors_action" model="ir.actions.act_window">
         <field name="name">Floors</field>
         <field name="res_model">folk.floor</field>
-        <field name="view_mode">tree,form,search,kanban</field>
+        <field name="view_mode">tree,form,search</field>
 
     </record>
     <menuitem id="floor_menu"

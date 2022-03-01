@@ -1,0 +1,613 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* room_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-28 18:15+0000\n"
+"PO-Revision-Date: 2022-02-28 18:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: room_management
+#: code:addons/room_management/models/floor.py:0
+#: model:ir.model.constraint,message:room_management.constraint_folk_floor_name_unique
+#, python-format
+msgid " Floor Already Exist!"
+msgstr "الطابق موجود بالفعل!"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "<strong>الدور:</strong>"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "<strong>الي تاريخ:</strong>"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "<strong>بداية من تاريخ:</strong>"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
+msgid "About Room"
+msgstr "معلومات الغرفة"
+
+
+#. module: room_management
+#: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__available
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__available
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms_accommodations__status__available
+msgid "Available"
+msgstr "متاحة"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
+msgid "Basic Information"
+msgstr "معلومات اساسية"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__bed_id
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__bed_id
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__bed_id
+msgid "Bed"
+msgstr "سرير"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_beds__bed_no
+msgid "Bed No"
+msgstr "رقم السرير"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.menu_wizard_Bed
+msgid "Bed Report"
+msgstr "تقرير حجز الغرف والسرير"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Bed:"
+msgstr "سرير"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.beds_action
+msgid "Beds"
+msgstr "السرير"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.beds_menu
+msgid "Beds Menu"
+msgstr "قائمة السراير"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.view_bed_report
+#: model_terms:ir.ui.view,arch_db:room_management.view_clean_report
+msgid "Cancel"
+msgstr "اغلاق"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_floor__room_capacity
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__room_capacity_num
+msgid "Capacity"
+msgstr "عدد الغرف"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.view_bed_report
+#: model_terms:ir.ui.view,arch_db:room_management.view_clean_report
+msgid "Choose your date"
+msgstr "اختار التاريخ"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.clean_action
+#: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
+msgid "Clean"
+msgstr "النظافة"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.clean_menu
+msgid "Clean Menu"
+msgstr "قائمة اعمال النظافة"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.menu_wizard_clean
+msgid "Clean Report"
+msgstr "تقرير النظافة"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
+msgid "Clean Time:"
+msgstr "توقيت النظافة"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_folk_clean
+msgid "Cleanliness"
+msgstr "التنظيف"
+
+
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__customer_name
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__customer_id
+#: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+msgid "Customer"
+msgstr "العميل"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Customer :"
+msgstr "العامل :"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__customer_name
+msgid "Customer Name"
+msgstr "العميل"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__customer_id
+msgid "Customer clean Name"
+msgstr "العامل"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
+msgid "Customer:"
+msgstr "العميل"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__time_clean
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__from_date
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__from_date
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: room_management
+#: code:addons/room_management/models/room_accommodations.py:0
+#, python-format
+msgid "Date Of Reservation From Must Be Before Date Of Reservation TO"
+msgstr "تاريخ الحجز يجب ان يكون مسبوقا عن تاريخ انتهاء الحجز"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__to_date
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__to_date
+msgid "Date To"
+msgstr "الى تاريخ"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__display_name
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__display_name
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__display_name
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__display_name
+#: model:ir.model.fields,field_description:room_management.field_folk_beds__display_name
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__display_name
+#: model:ir.model.fields,field_description:room_management.field_folk_floor__display_name
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__display_name
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: room_management
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__dorm_room
+msgid "Dorm Room"
+msgstr "غرفة سكنية"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_folk_floor
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__floor_id
+#: model:ir.model.fields,field_description:room_management.field_folk_floor__name
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__floor_id
+#: model_terms:ir.ui.view,arch_db:room_management.floor_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.room_search_view
+msgid "Floor"
+msgstr "الدور"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_kanban_view
+msgid "Floor :"
+msgstr "الدور :"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.floor_menu
+msgid "Floor Menu"
+msgstr "قائمة الادوار"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.floor_kanban_view
+msgid "Floor:"
+msgstr "الدور :"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.floors_action
+#: model_terms:ir.ui.view,arch_db:room_management.floor_search_view
+msgid "Floors"
+msgstr "الادوار"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.menu_action_wizard_bed
+#: model:ir.actions.report,name:room_management.action_bed_folk
+msgid "Folk Bed Report"
+msgstr "تقرير حجز الغرف"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.menu_action_wizard_clean
+#: model:ir.actions.report,name:room_management.action_clean_folk
+msgid "Folk Clean Report"
+msgstr "تقرير خاص بالنظافة"
+
+#. module: room_management
+#: model:ir.module.category,name:room_management.room_groups_category
+msgid "Folk Rooms"
+msgstr "موديل الغرف"
+
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.floor_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.room_search_view
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__image
+msgid "Image"
+msgstr "صورة"
+
+
+
+#. module: room_management
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__lab
+msgid "Lab"
+msgstr "غرفة معامل"
+
+
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__line_ids
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__line_ids
+msgid "Line"
+msgstr ""
+
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
+msgid "More Information"
+msgstr "معلومات اضافية"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__name
+#: model_terms:ir.ui.view,arch_db:room_management.room_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
+msgid "Name"
+msgstr "غرفة"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_kanban_view
+msgid "Name:"
+msgstr "رقم الغرفة"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__beds_no
+msgid "No Of Beds"
+msgstr "عدد السراير"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__notes
+#: model:ir.model.fields,field_description:room_management.field_folk_beds__notes
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__notes
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__notes
+#: model_terms:ir.ui.view,arch_db:room_management.bed_form_views
+#: model_terms:ir.ui.view,arch_db:room_management.clean_form_views
+#: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
+msgid "Notes"
+msgstr "ملاحظات"
+
+
+#. module: room_management
+#: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__occupied
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__occupied
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms_accommodations__status__occupied
+msgid "Occupied"
+msgstr "محجوزة"
+
+#. module: room_management
+#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__other
+msgid "Other"
+msgstr "اخر"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__places
+msgid "Places"
+msgstr "الاماكن"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
+msgid "Places:"
+msgstr "الاماكن :"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.view_bed_report
+#: model_terms:ir.ui.view,arch_db:room_management.view_clean_report
+msgid "Print"
+msgstr "طباعة"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.wizard_report
+msgid "Reports"
+msgstr "تقارير"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__bed_reserve_from
+msgid "Reservation From"
+msgstr "حجز من تاريخ"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__bed_reserve_to
+msgid "Reservation To"
+msgstr "حتى تاريخ"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__bed_reserve_from
+msgid "Reserve From"
+msgstr "حجز من تاريخ"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Reserve From :"
+msgstr "حجز من تاريخ :"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__bed_reserve_to
+msgid "Reserve To"
+msgstr "حجز حتى تاريخ"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Reserve To :"
+msgstr "حجز حتى تاريخ :"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__reserved
+msgid "Reserved"
+msgstr "محجوز"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__responsible_id
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__responsible_id
+#: model:ir.model.fields,field_description:room_management.field_folk_clean__responsible_id
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__responsible_id
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__responsible_id
+#: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+#: model_terms:ir.ui.view,arch_db:room_management.room_search_view
+msgid "Responsible"
+msgstr "المسئول"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_kanban_view
+msgid "Responsible :"
+msgstr "المسئول :"
+
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Responsible:"
+msgstr "المسئول :"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__room_id
+#: model:ir.model.fields,field_description:room_management.field_folk_beds__rooms_ids
+#: model:ir.model.fields,field_description:room_management.field_folk_floor__room_ids
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__room_no
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__room_id
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+msgid "Room"
+msgstr "رقم الغرفة"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.rooms_accommodations_action
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+msgid "Room Accommodations"
+msgstr "حجز الغرف"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.room_accommodations
+msgid "Room Accommodations Menu"
+msgstr "قائمة حجز الغرف والسرير"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.floor_kanban_view
+msgid "Room Capacity :"
+msgstr "عدد الغرف بالدور"
+
+#. module: room_management
+#: model:res.groups,name:room_management.room_manager_group
+msgid "Room Manager User"
+msgstr "مستخدم مدير"
+
+#. module: room_management
+#: model:res.groups,name:room_management.room_normal_group
+msgid "Room Normal User"
+msgstr "مستخدم عادى"
+
+#. module: room_management
+#: code:addons/room_management/models/floor.py:0
+#, python-format
+msgid "Room capacity must be more than 0"
+msgstr "عدد الغرف يجب ان يكون غرفة ع الاقل"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
+msgid "Room:"
+msgstr "غرفة :"
+
+#. module: room_management
+#: model:ir.actions.act_window,name:room_management.rooms_action
+#: model:ir.ui.menu,name:room_management.room_root
+#: model_terms:ir.ui.view,arch_db:room_management.room_search_view
+msgid "Rooms"
+msgstr "الغرف"
+
+#. module: room_management
+#: model:ir.ui.menu,name:room_management.room_menu
+msgid "Rooms Menu"
+msgstr "قائمة الغرف"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_beds__bed_status
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__status
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__status
+#: model_terms:ir.ui.view,arch_db:room_management.bed_form_views
+msgid "Status"
+msgstr "الحالة"
+
+
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__time_clean
+msgid "Time Clean"
+msgstr "وقت النظافة"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__room_type
+msgid "Type Of Room"
+msgstr "نوع الغرفة"
+
+
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__wizard_id
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__wizard_id
+msgid "Wizard"
+msgstr ""
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_alfolk_bed_report
+msgid "alfolk.bed.report"
+msgstr "تقرير الغرف المحجوزة"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_alfolk_bed_report_line
+msgid "alfolk.bed.report.line"
+msgstr ""
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_alfolk_clean_report
+msgid "alfolk.clean.report"
+msgstr "تقرير اعمال النظافة"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_alfolk_clean_report_line
+msgid "alfolk.clean.report.line"
+msgstr ""
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__bed_ids
+msgid "beds"
+msgstr "سرير"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_folk_beds
+msgid "folk.beds"
+msgstr "موديول السراير"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__places_name
+msgid "folk.clean"
+msgstr "موديول النظافة"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_folk_rooms
+msgid "folk.rooms"
+msgstr "موديول الغرف"
+
+#. module: room_management
+#: model:ir.model,name:room_management.model_folk_rooms_accommodations
+msgid "folk.rooms.accommodations"
+msgstr "موديول حجز الغرف"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid ""
+"استمارة خاصة بمتابعة أعمال\n"
+"                        النظافة"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "اسم العامل"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "اسم العميل"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "الاماكن"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "التوقيت"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "المسئول"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "حتى تاريخ"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "تقرير عن حجز الغرف والسراير"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "توقيع العامل"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "توقيع المشرف"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "حجز من"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "سرير"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
+msgid "غرفة"
+msgstr ""
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
+msgid "ملاحظات"
+msgstr ""

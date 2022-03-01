@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_bed_report" model="ir.ui.view">
+        <field name="name">Bed Report</field>
+        <field name="model">alfolk.bed.report</field>
+        <field name="arch" type="xml">
+            <form string="Choose your date">
+                <p class="oe_gray">
+                </p>
+                <group>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="reserved"/>
+                </group>
+
+                <footer>
+                    <button name="print_pdf_bed_report" string="Print" icon="fa-print" type="object" default_focus="1"
+                            class="oe_highlight"/>
+                    <button string="Cancel" icon="fa-close" class="btn btn-primary" special="cancel"/>
+                </footer>
+
+            </form>
+
+
+        </field>
+    </record>
+    <record id="menu_action_wizard_bed" model="ir.actions.act_window">
+        <field name="name">Folk Bed Report</field>
+        <field name="res_model">alfolk.bed.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_bed_report"/>
+        <field name="target">new</field>
+    </record>
+    <report
+            id="action_bed_folk"
+            model="alfolk.bed.report"
+            string="Folk Bed Report"
+            menu="False"
+            report_type="qweb-pdf"
+            name="room_management.folk_bed_report"
+            file="room_management.folk_bed_report"
+    />
+
+    <menuitem id="wizard_report"
+              name="Reports"
+              parent="room_root"/>
+    <menuitem
+            id="menu_wizard_Bed"
+            name="Bed Report"
+            action="menu_action_wizard_bed"
+            parent="room_management.wizard_report"
+            sequence="20"
+
+    />
+
+
+</odoo>

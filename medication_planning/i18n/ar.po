@@ -10,6 +10,16 @@ msgid "Person"
 msgstr "اسم الشخص"
 
 #. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_product_template__pro_type
+msgid "Medicine Type"
+msgstr "نوع الدواء"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_product_template__medication
+msgid "Medication"
+msgstr "دواء"
+
+#. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning__medication_duration
 msgid "Medicine Duration"
 msgstr " فترة/مدة العلاج"
@@ -117,7 +127,17 @@ msgstr "التاريخ والساعة"
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__employee
 msgid "Employee"
-msgstr "توقيع المشرف"
+msgstr "المشرف"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__product_uom_id
+msgid "Unit of Measure"
+msgstr "الوحدة"
+
+#. module: medication_planning
+#: model:ir.model.fields,field_description:medication_planning.field_medication_planning_day__quantity
+msgid " Quantity"
+msgstr "الكمية"
 
 #. module: medication_planning
 #: model:ir.model.fields,field_description:medication_planning.field_medication_planning_line__quantity

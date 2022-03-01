@@ -14,6 +14,16 @@ msgid "Form"
 msgstr "إستمارة"
 
 #. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply__category
+msgid "Partner Category"
+msgstr "تصنيف العميل"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_apply__allow_add
+msgid "Allow Add Line"
+msgstr "السماح بأضافه بنود"
+
+#. module: form_design
 #: model:ir.model.fields.selection,name:form_design.selection__form_design_line__question_type__text_box
 #: model:ir.model.fields.selection,name:form_design.selection__form_design_line__matrix_answer_type__text
 #: model:ir.model.fields.selection,name:form_design.selection__form_apply_line__question_type__text_box
@@ -109,6 +119,16 @@ msgstr "العنوان"
 msgid "Responsible"
 msgstr "المسئول"
 
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design__category
+msgid "Partner Category"
+msgstr "تصنيف لعميل"
+
+#. module: form_design
+#: model:ir.model.fields,field_description:form_design.field_form_design__allow_add
+msgid "Allow Add Line"
+msgstr  "السماح بأضافه بنود"
+
 
 #. module: form_design
 #: model:ir.model.fields,field_description:form_design.field_form_design_line__suggested_answer_ids
@@ -132,6 +152,35 @@ msgstr "العميل"
 #: model:ir.model.fields,field_description:form_design.field_form_apply_line__answer
 msgid "Answer"
 msgstr "الاجابة"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__form_line_id
+msgid "Question"
+msgstr "السؤال"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__note
+msgid "Note"
+msgstr "ملاحظات"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view
+#: model:ir.model.fields,field_description:form_design.field_form_apply_line__employee_id
+msgid "Responsible Employee"
+msgstr "المسؤول"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_form_view
+msgid "Register"
+msgstr "تسجيل"
+
+#. module: form_design
+#: model_terms:ir.ui.view,arch_db:form_design.form_apply_form_view
+msgid "Set Close"
+msgstr "غلق"
+
 
 #. module: form_design
 #: model_terms:ir.ui.view,arch_db:form_design.form_apply_line_form_view2
@@ -158,6 +207,12 @@ msgstr "الأختيارات"
 #: model:ir.ui.menu,name:form_design.form_apply_menu_root
 msgid "Form Fill Out"
 msgstr "ملء إستمارة"
+
+#. module: form_design
+#: model:ir.actions.act_window,name:form_design.form_apply_action_done_window
+#: model:ir.ui.menu,name:form_design.form_apply_menu_closed
+msgid "Closed Filled Out Forms"
+msgstr "الاستمارات التى تم ملئها"
 
 #. module: form_design
 #: model:ir.actions.act_window,name:form_design.form_apply_line_action_window
