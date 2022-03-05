@@ -7,8 +7,9 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="partner_name"/>
                             <field name="responsible_id" required="1"/>
-                            <field name="customer_name" required="1"/>
+<!--                            <field name="customer_name" required="1"/>-->
                             <field name="room_id" required="1"/>
                         </group>
                         <group>
@@ -34,14 +35,13 @@
         <field name="model">folk.rooms.accommodations</field>
         <field name="arch" type="xml">
             <tree>
+<!--                <field name="customer_name"/>-->
+                <field name="partner_name"/>
                 <field name="room_id"/>
                 <field name="bed_id"/>
-<!--                attrs="{'invisible': [('status','=','occupied')]}"/>-->
-                <field name="responsible_id"/>
-                <field name="customer_name"/>
-                <field name="bed_reserve_from"/>
+                 <field name="bed_reserve_from"/>
                 <field name="bed_reserve_to"/>
-<!--                <field name="status"/>-->
+                <field name="responsible_id"/>
             </tree>
 
         </field>
@@ -63,7 +63,9 @@
                 <separator/>
                 <group expand="1" string="Group By">
                     <filter string="Responsible" name="responsible_id" context="{'group_by':'responsible_id'}"/>
-                    <filter string="Customer" name="customer_name" context="{'group_by':'customer_name'}"/>
+<!--                    <filter string="Customer" name="customer_name" context="{'group_by':'customer_name'}"/>-->
+                    <filter string="Partner" name="partner_name" context="{'group_by':'partner_name'}"/>
+
                     <filter string="Room" name="room_id" context="{'group_by':'room_id'}"/>
 
 
@@ -82,12 +84,13 @@
                 <field name="room_id"/>
                 <field name="responsible_id"/>
                 <field name="customer_name"/>
+<!--                <field name="customer_name"/>-->
                 <field name="bed_reserve_from"/>
                 <field name="bed_reserve_to"/>
                 <templates>
                     <t t-name="kanban-box">
 
-                        <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_global_click" style="width: 200px; height: 140px;">
                             <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
                                 <div class="oe_kanban_details">
                                     <ul>
@@ -103,7 +106,7 @@
 
 
                                         <li>Customer :
-                                            <field name="customer_name"/>
+                                            <field name="partner_name"/>
                                         </li>
                                          <li>Reserve From :
                                             <field name="bed_reserve_from"/>

@@ -112,7 +112,7 @@ odoo.define("web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer", function (requ
          * @returns {jQueryElement} The thead element that was inserted into.
          */
         _renderHeader: function () {
-            var $tr = $("<tr>").append("<th/>");
+            var $tr = $("<tr>").append("<th />");
             $tr = $tr.append(_.map(this.columns, this._renderHeaderCell.bind(this)));
             if (this.matrix_data.show_row_totals) {
                 $tr.append($("<th/>", {class: "total"}));
@@ -207,6 +207,7 @@ odoo.define("web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer", function (requ
                     return this._renderBodyCell(record, column, index, {mode: ""});
                 }.bind(this)
             );
+
             $tr = $tr.append($cells);
             if (row.aggregate) {
                 $tr.append(this._renderAggregateRowCell(row));
@@ -222,7 +223,7 @@ odoo.define("web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer", function (requ
          * @returns {jQueryElement} the cell that was rendered.
          */
         _renderLabelCell: function (record) {
-            var $td = $("<td>");
+            var $td = $("<td >");
             var value = record.data[this.matrix_data.field_y_axis];
             if (value.type === "record") {
                 // We have a related record
@@ -273,10 +274,9 @@ odoo.define("web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer", function (requ
             // TODO roadmap: here we should collect possible extra params
             // the user might want to attach to each single cell.
 
-            var $td = $("<td>", {
+            var $td = $("<td >", {
                 class: tdClassName,
             });
-
             if (_.isUndefined(record)) {
                 // Without record, nothing elese to do
                 return $td;
@@ -306,8 +306,11 @@ odoo.define("web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer", function (requ
 
             if (node.tag === "widget") {
                 return $td.append(this._renderWidget(record, node));
+
             }
+
             var $el = this._renderFieldWidget(node, record, _.pick(options, "mode"));
+             console.log($el);
             return $td.append($el);
         },
 

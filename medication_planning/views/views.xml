@@ -102,11 +102,11 @@
                         </div>
 
                         <group>
+                            <field name="category"/>
                             <field name="person"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
                                                      <field name="warehouse"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
-
                             <field name="medication_duration"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
                              <field name="location" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>

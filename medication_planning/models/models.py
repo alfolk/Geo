@@ -51,6 +51,7 @@ class alfolk_medication_chart_record(models.Model):
     _name = 'medication.planning'
     _description = 'Medication Planned'
     _rec_name = 'person'
+    category = fields.Many2one('partner.category', "Category",store=True)
 
     @api.depends('line_id.quantity_re')
     def get_total_return(self):
@@ -330,3 +331,4 @@ class alfolk_medication_chart_record_day(models.Model):
     quantity_re = fields.Float(string='Quantity re', compute='_compute_quantity', store=True)
     employee = fields.Many2one('hr.employee', required=True, string='Employee', store=True)
     products = fields.Many2many('product.product', string='product', store=False, related='line_ids.products', )
+    is_talken = fields.Boolean(string='IS Taken?', store=True)

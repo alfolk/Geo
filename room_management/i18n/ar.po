@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 18:15+0000\n"
-"PO-Revision-Date: 2022-02-28 18:15+0000\n"
+"POT-Creation-Date: 2022-03-05 17:18+0000\n"
+"PO-Revision-Date: 2022-03-05 17:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,11 +44,9 @@ msgstr ""
 msgid "About Room"
 msgstr "معلومات الغرفة"
 
-
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__available
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__available
-#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms_accommodations__status__available
 msgid "Available"
 msgstr "متاحة"
 
@@ -133,20 +131,17 @@ msgstr "توقيت النظافة"
 msgid "Cleanliness"
 msgstr "التنظيف"
 
-
-
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__customer_name
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__customer_id
 #: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
-#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
 msgid "Customer"
 msgstr "العميل"
 
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.room_accommodations_kanban_view
 msgid "Customer :"
-msgstr "العامل :"
+msgstr "العميل :"
 
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__customer_name
@@ -161,7 +156,7 @@ msgstr "العامل"
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
 msgid "Customer:"
-msgstr "العميل"
+msgstr "العامل :"
 
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_clean__time_clean
@@ -185,19 +180,6 @@ msgstr "تاريخ الحجز يجب ان يكون مسبوقا عن تاريخ 
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__to_date
 msgid "Date To"
 msgstr "الى تاريخ"
-
-#. module: room_management
-#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__display_name
-#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__display_name
-#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__display_name
-#: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__display_name
-#: model:ir.model.fields,field_description:room_management.field_folk_beds__display_name
-#: model:ir.model.fields,field_description:room_management.field_folk_clean__display_name
-#: model:ir.model.fields,field_description:room_management.field_folk_floor__display_name
-#: model:ir.model.fields,field_description:room_management.field_folk_rooms__display_name
-#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__display_name
-msgid "Display Name"
-msgstr ""
 
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__dorm_room
@@ -225,11 +207,6 @@ msgid "Floor Menu"
 msgstr "قائمة الادوار"
 
 #. module: room_management
-#: model_terms:ir.ui.view,arch_db:room_management.floor_kanban_view
-msgid "Floor:"
-msgstr "الدور :"
-
-#. module: room_management
 #: model:ir.actions.act_window,name:room_management.floors_action
 #: model_terms:ir.ui.view,arch_db:room_management.floor_search_view
 msgid "Floors"
@@ -253,6 +230,7 @@ msgid "Folk Rooms"
 msgstr "موديل الغرف"
 
 
+
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
 #: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
@@ -261,11 +239,11 @@ msgstr "موديل الغرف"
 msgid "Group By"
 msgstr "تجميع حسب"
 
+
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms__image
 msgid "Image"
 msgstr "صورة"
-
 
 
 #. module: room_management
@@ -273,14 +251,11 @@ msgstr "صورة"
 msgid "Lab"
 msgstr "غرفة معامل"
 
-
-
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report__line_ids
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report__line_ids
 msgid "Line"
 msgstr ""
-
 
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
@@ -297,7 +272,8 @@ msgstr "غرفة"
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.room_kanban_view
 msgid "Name:"
-msgstr "رقم الغرفة"
+msgstr "غرفة :"
+
 
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms__beds_no
@@ -319,7 +295,6 @@ msgstr "ملاحظات"
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__occupied
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__occupied
-#: model:ir.model.fields.selection,name:room_management.selection__folk_rooms_accommodations__status__occupied
 msgid "Occupied"
 msgstr "محجوزة"
 
@@ -327,6 +302,11 @@ msgstr "محجوزة"
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__other
 msgid "Other"
 msgstr "اخر"
+
+#. module: room_management
+#: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
+msgid "Partner"
+msgstr "العميل"
 
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_clean__places
@@ -412,11 +392,10 @@ msgstr "المسئول :"
 #: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__room_id
 #: model:ir.model.fields,field_description:room_management.field_folk_beds__rooms_ids
 #: model:ir.model.fields,field_description:room_management.field_folk_floor__room_ids
-#: model:ir.model.fields,field_description:room_management.field_folk_rooms__room_no
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__room_id
 #: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
 msgid "Room"
-msgstr "رقم الغرفة"
+msgstr "غرفة"
 
 #. module: room_management
 #: model:ir.actions.act_window,name:room_management.rooms_accommodations_action
@@ -430,11 +409,6 @@ msgid "Room Accommodations Menu"
 msgstr "قائمة حجز الغرف والسرير"
 
 #. module: room_management
-#: model_terms:ir.ui.view,arch_db:room_management.floor_kanban_view
-msgid "Room Capacity :"
-msgstr "عدد الغرف بالدور"
-
-#. module: room_management
 #: model:res.groups,name:room_management.room_manager_group
 msgid "Room Manager User"
 msgstr "مستخدم مدير"
@@ -443,6 +417,11 @@ msgstr "مستخدم مدير"
 #: model:res.groups,name:room_management.room_normal_group
 msgid "Room Normal User"
 msgstr "مستخدم عادى"
+
+#. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms__room_no
+msgid "Room Number"
+msgstr "رقم الغرفة"
 
 #. module: room_management
 #: code:addons/room_management/models/floor.py:0
@@ -470,12 +449,22 @@ msgstr "قائمة الغرف"
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_beds__bed_status
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms__status
-#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__status
 #: model_terms:ir.ui.view,arch_db:room_management.bed_form_views
 msgid "Status"
 msgstr "الحالة"
 
-
+#. module: room_management
+#: model:ir.model.fields,help:room_management.field_folk_beds__activity_state
+#: model:ir.model.fields,help:room_management.field_folk_clean__activity_state
+#: model:ir.model.fields,help:room_management.field_folk_floor__activity_state
+#: model:ir.model.fields,help:room_management.field_folk_rooms__activity_state
+#: model:ir.model.fields,help:room_management.field_folk_rooms_accommodations__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
 
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__time_clean
@@ -541,6 +530,11 @@ msgid "folk.rooms.accommodations"
 msgstr "موديول حجز الغرف"
 
 #. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_folk_rooms_accommodations__partner_name
+msgid "partner"
+msgstr "العميل"
+
+#. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
 msgid ""
 "استمارة خاصة بمتابعة أعمال\n"
@@ -574,7 +568,7 @@ msgstr ""
 
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.folk_bed_report
-msgid "حتى تاريخ"
+msgid "الى"
 msgstr ""
 
 #. module: room_management

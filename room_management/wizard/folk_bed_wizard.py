@@ -24,6 +24,7 @@ class FolkBedWizard(models.TransientModel):
                 bed_reserved_search = self.env['folk.rooms.accommodations'].search(
                     [('bed_reserve_from', '>=', wizard.from_date),
                      ('bed_reserve_to', '<=', wizard.to_date)])
+                print(bed_reserved_search)
 
                 if bed_reserved_search:
                     for ex in bed_reserved_search:
@@ -36,9 +37,19 @@ class FolkBedWizard(models.TransientModel):
                             'bed_id': ex.bed_id.bed_no,
 
                         }))
-            # else:
-            #     bed_search = self.env['folk.beds'].search([])
-            #     for bed in bed_search:
+            else:
+                # bed_search = self.env['folk.beds'].search([])
+                # print(bed_search)
+                # for bed in bed_search:
+                not_reserved_beds = self.env['folk.rooms.accommodations'].search(
+                        [('bed_reserve_to', '<=', datetime.today())])
+                print(not_reserved_beds)
+                if not_reserved_beds:
+                    for b in not_reserved_beds:
+                        line_ids.append((0, 0, {
+                                'room_id': b.room_id.name,
+                                'bed_id': b.bed_id.bed_no,
+                            }))
 
         self.write({'line_ids': line_ids})
         context = {

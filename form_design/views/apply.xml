@@ -144,7 +144,7 @@
                     <field name="answers_text_ids" widget="x2many_2d_matrix" field_x_axis="val_name"
                            field_y_axis="name" field_value="text"
                            string="Answer"
-                           attrs="{'invisible':['|',('question_type','!=','matrix'),('matrix_answer_type','!=','text')],'readonly':[('state','=','done')],'required':[('question_type','=','matrix')]}">
+                           attrs="{'invisible':['|',('question_type','!=','matrix'),('matrix_answer_type','!=','text')],'readonly':1,'required':[('question_type','=','matrix')]}">
                         <tree>
                             <field name="val_name"/>
                             <field name="name"/>
@@ -177,7 +177,7 @@
                     <field name="answers_char_ids" widget="x2many_2d_matrix" field_x_axis="val_name"
                            field_y_axis="name" field_value="textChar"
                            string="Answer"
-                           attrs="{'invisible':['|',('question_type','!=','matrix'),('matrix_answer_type','!=','char')],'readonly':[('state','=','done')],'required':[('question_type','=','matrix')]}">
+                           attrs="{'invisible':['|',('question_type','!=','matrix'),('matrix_answer_type','!=','char')],'readonly':1,'required':[('question_type','=','matrix')]}">
                         <tree>
                             <field name="val_name"/>
                             <field name="name"/>
@@ -316,7 +316,7 @@
                         <tree>
                             <field name="val_name"/>
                             <field name="name"/>
-                            <field name="text"/>
+                            <field name="text" widget="text"/>
                             <field name="form_line_id"/>
                         </tree>
                     </field>

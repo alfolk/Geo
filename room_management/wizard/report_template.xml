@@ -25,9 +25,9 @@
 
                     </div>
                     <br/>
-                    <table class="table table-condensed">
+                    <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr style="background-color:gray;text-align:center">
                                 <th>اسم العامل</th>
                                 <th>التوقيت</th>
                                 <th>الاماكن</th>
@@ -38,7 +38,7 @@
                         </thead>
                         <tbody>
                             <t t-foreach="o.line_ids" t-as="l">
-                                <tr>
+                                <tr style="text-align:center">
                                     <td>
                                         <span t-esc="l.customer_id"/>
                                     </td>
