@@ -35,7 +35,7 @@
                             <t t-foreach="o.line_ids" t-as="l">
                                 <tr style="text-align:center">
                                      <td t-if="o.reserved">
-                                        <span t-esc="l.customer_name" />
+                                        <span t-esc="l.partner_name" />
                                     </td>
                                      <td>
                                         <span t-esc="l.room_id"/>

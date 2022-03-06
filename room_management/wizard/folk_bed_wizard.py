@@ -29,7 +29,7 @@ class FolkBedWizard(models.TransientModel):
                 if bed_reserved_search:
                     for ex in bed_reserved_search:
                         line_ids.append((0, 0, {
-                            'customer_name': ex.customer_name.name,
+                            'partner_name': ex.partner_name.name,
                             'responsible_id': ex.responsible_id.name,
                             'bed_reserve_from': ex.bed_reserve_from,
                             'bed_reserve_to': ex.bed_reserve_to,
@@ -72,7 +72,8 @@ class BedWizardLine(models.TransientModel):
     _name = 'alfolk.bed.report.line'
 
     wizard_id = fields.Many2one('alfolk.bed.report', ondelete='cascade')
-    customer_name = fields.Char("Customer")
+    # customer_name = fields.Char("Customer")
+    partner_name = fields.Char("Partner")
     bed_reserve_from = fields.Date("Reserve From", default=datetime.today())
     bed_reserve_to = fields.Date("Reserve To", default=datetime.today())
     room_id = fields.Char("Room")

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 17:18+0000\n"
-"PO-Revision-Date: 2022-03-05 17:18+0000\n"
+"POT-Creation-Date: 2022-03-06 05:55+0000\n"
+"PO-Revision-Date: 2022-03-06 05:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,6 @@ msgstr ""
 
 #. module: room_management
 #: code:addons/room_management/models/floor.py:0
-#: model:ir.model.constraint,message:room_management.constraint_folk_floor_name_unique
 #, python-format
 msgid " Floor Already Exist!"
 msgstr "الطابق موجود بالفعل!"
@@ -44,11 +43,13 @@ msgstr ""
 msgid "About Room"
 msgstr "معلومات الغرفة"
 
+
+
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__available
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__available
 msgid "Available"
-msgstr "متاحة"
+msgstr "متاح"
 
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.rooms_form_views
@@ -132,7 +133,6 @@ msgid "Cleanliness"
 msgstr "التنظيف"
 
 #. module: room_management
-#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__customer_name
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__customer_id
 #: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
 msgid "Customer"
@@ -229,8 +229,6 @@ msgstr "تقرير خاص بالنظافة"
 msgid "Folk Rooms"
 msgstr "موديل الغرف"
 
-
-
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.clean_search_view
 #: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
@@ -239,12 +237,10 @@ msgstr "موديل الغرف"
 msgid "Group By"
 msgstr "تجميع حسب"
 
-
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_folk_rooms__image
 msgid "Image"
 msgstr "صورة"
-
 
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__lab
@@ -291,12 +287,11 @@ msgstr "عدد السراير"
 msgid "Notes"
 msgstr "ملاحظات"
 
-
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_beds__bed_status__occupied
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__status__occupied
 msgid "Occupied"
-msgstr "محجوزة"
+msgstr "محجوز"
 
 #. module: room_management
 #: model:ir.model.fields.selection,name:room_management.selection__folk_rooms__room_type__other
@@ -304,6 +299,7 @@ msgid "Other"
 msgstr "اخر"
 
 #. module: room_management
+#: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__partner_name
 #: model_terms:ir.ui.view,arch_db:room_management.floor_accommodations_search_view
 msgid "Partner"
 msgstr "العميل"
@@ -380,7 +376,6 @@ msgstr "المسئول"
 #: model_terms:ir.ui.view,arch_db:room_management.room_kanban_view
 msgid "Responsible :"
 msgstr "المسئول :"
-
 
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.clean_kanban_view
@@ -476,8 +471,6 @@ msgstr "وقت النظافة"
 msgid "Type Of Room"
 msgstr "نوع الغرفة"
 
-
-
 #. module: room_management
 #: model:ir.model.fields,field_description:room_management.field_alfolk_bed_report_line__wizard_id
 #: model:ir.model.fields,field_description:room_management.field_alfolk_clean_report_line__wizard_id
@@ -492,7 +485,7 @@ msgstr "تقرير الغرف المحجوزة"
 #. module: room_management
 #: model:ir.model,name:room_management.model_alfolk_bed_report_line
 msgid "alfolk.bed.report.line"
-msgstr ""
+msgstr "موديول تقرير حجز الغرف والسراير"
 
 #. module: room_management
 #: model:ir.model,name:room_management.model_alfolk_clean_report
@@ -559,6 +552,11 @@ msgstr ""
 #. module: room_management
 #: model_terms:ir.ui.view,arch_db:room_management.alfolk_clean_report_new
 msgid "التوقيت"
+msgstr ""
+
+#. module: room_management
+#: model:ir.model.constraint,message:room_management.constraint_folk_floor_name_unique
+msgid "الطابق موجود بالفعل!"
 msgstr ""
 
 #. module: room_management

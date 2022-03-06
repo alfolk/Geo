@@ -128,7 +128,7 @@
     <record id="rooms_accommodations_action" model="ir.actions.act_window">
         <field name="name">Room Accommodations</field>
         <field name="res_model">folk.rooms.accommodations</field>
-        <field name="view_mode">tree,form,search,kanban</field>
+        <field name="view_mode">tree,form,search</field>
 
     </record>
     <menuitem id="room_accommodations"

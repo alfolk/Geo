@@ -34,7 +34,7 @@ class RoomsAlfolk(models.Model):
         room_counts = len(self.floor_id.room_ids)
         floor_capacity = self.floor_id.room_capacity
         if room_counts > floor_capacity:
-            raise ValidationError("Floor is Full!")
+            raise ValidationError("الطابق ممتلىء!")
 
     def check_room_availability(self):
         for r in self:
