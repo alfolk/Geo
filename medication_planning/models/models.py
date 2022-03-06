@@ -51,7 +51,18 @@ class alfolk_medication_chart_record(models.Model):
     _name = 'medication.planning'
     _description = 'Medication Planned'
     _rec_name = 'person'
-    category = fields.Many2one('partner.category', "Category",store=True)
+    category = fields.Many2one('partner.category', "Category", store=True)
+
+    def unlink(self):
+        for l in self:
+            if  l.state != 'draft':
+                raise UserError(_('Cannot delete a item in post state'))
+            return super(alfolk_medication_chart_record, self).unlink()
+
+    @api.onchange('category')
+    def _onchange_cust_categ_id(self):
+        self.person = False
+        return {'domain': {'person': [('category', '=', self.category.id)]}}
 
     @api.depends('line_id.quantity_re')
     def get_total_return(self):
@@ -139,7 +150,9 @@ class alfolk_medication_chart_record(models.Model):
 
                 })
             picking.action_confirm()
-            self.write({'state': 'picking'})
+            self.write({'state': 'picking',
+
+                        })
 
     def create_residual(self):
         for record in self:
@@ -280,9 +293,22 @@ class alfolk_medication_chart_record_line(models.Model):
         else:
             return {'domain': False}
 
-    product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure', store=True)
+    @api.model
+    def _getline1(self):
+        employees = self.env['product.product'].search([('id', '=', self.medication.id),
+                                                       ])
+        t = []
+        for l in employees:
+            t.append(l.uom_id.id)
+        if t:
+            return t[0]
+        else:
+            return False
 
-    product_uom_ids = fields.Many2one('uom.uom', 'Unit of Measure', store=True)
+
+    product_uom_id = fields.Many2one(related='medication.uom_id',string= 'Unit of Measure', default=_getline1,store=True)
+
+    product_uom_ids = fields.Many2one(related='medication.uom_id',string= 'Unit of Measure', store=True)
 
 
 class alfolk_medication_chart_record_day(models.Model):
@@ -294,7 +320,7 @@ class alfolk_medication_chart_record_day(models.Model):
     medication = fields.Many2one('product.product', required=True, domain="[('id', 'in',products)]", string='Medicine',
                                  store=True)
     day = fields.Datetime(string='Day With Hour', required=True, store=True)
-    quantity = fields.Float(string='Quantity', required=True, store=True)
+    quantity = fields.Char(string='Quantity', required=True, store=True)
 
     @api.onchange('medication')
     def onchange_field_uom_category(self):
@@ -304,7 +330,7 @@ class alfolk_medication_chart_record_day(models.Model):
         else:
             return {'domain': False}
 
-    product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure',required=True, store=True)
+    product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure', required=True, store=True)
 
     @api.depends('quantity', 'line_ids', 'medication')
     def _compute_quantity(self):
@@ -331,4 +357,4 @@ class alfolk_medication_chart_record_day(models.Model):
     quantity_re = fields.Float(string='Quantity re', compute='_compute_quantity', store=True)
     employee = fields.Many2one('hr.employee', required=True, string='Employee', store=True)
     products = fields.Many2many('product.product', string='product', store=False, related='line_ids.products', )
-    is_talken = fields.Boolean(string='IS Taken?', store=True)
+    is_taken = fields.Boolean(string='IS Taken?', store=True)

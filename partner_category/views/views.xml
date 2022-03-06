@@ -1,5 +1,15 @@
 <odoo>
-
+       <record id="sale_categ" model="ir.ui.view">
+            <field name="name">Customer Categ</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="category" options="{'no_create_edit': True, 'no_create':True, 'no_open':True}"
+                           attrs="{'readonly': [('state', '=', 'sale')]}"/>
+                </xpath>
+            </field>
+       </record>
        <record id="category_customer" model="ir.ui.view">
         <field name="name">Partner Category</field>
         <field name="model">partner.category</field>

@@ -107,6 +107,7 @@
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
                                                      <field name="warehouse"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
+
                             <field name="medication_duration"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
                              <field name="location" attrs="{'readonly':[('state','=','close')],'invisible':1}"/>
@@ -155,6 +156,7 @@
                                             <field name="day" required="1"/>
                                             <field name="quantity" required="1"/>
                                             <field name="employee" required="1"/>
+                                            <field name="is_taken" required="1"/>
                                             <field name="products" invisible="1"/>
                                             <field name="quantity_received" invisible="1"/>
                                             <field name="quantity_re" invisible="1"/>

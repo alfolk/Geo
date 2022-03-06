@@ -43,3 +43,10 @@ class res_partner_edit(models.Model):
     #             record.age = False
 
     age = fields.Char('Age', store=True, compute='calculate_age')
+class sales_order(models.Model):
+    _inherit = 'sale.order'
+    category = fields.Many2one('partner.category', "Category",store=True)
+    @api.onchange('category')
+    def _onchange_cust_categ_id(self):
+        self.partner_id = False
+        return {'domain': {'person': [('partner_id', '=', self.category.id)]}}
