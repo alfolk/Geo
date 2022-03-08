@@ -273,8 +273,21 @@ class FormApplyLine(models.Model):
             elif record.question_type == 'multiple_choice' and record.suggested_ids:
                 record.answer = ','.join([r.value for r in record.suggested_ids])
             elif record.question_type == 'matrix' and record.answers_ids:
-                record.answer = ','.join(
-                    [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.check)])
+                if record.matrix_answer_type=='boolean':
+                    record.answer = ','.join(
+                        [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.check)])
+                elif record.matrix_answer_type == 'text':
+                    record.answer = ','.join(
+                        [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.text)])
+                elif record.matrix_answer_type == 'date':
+                    record.answer = ','.join(
+                        [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.date)])
+                elif record.matrix_answer_type == 'datetime':
+                    record.answer = ','.join(
+                        [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.date_time)])
+                elif record.matrix_answer_type == 'char':
+                    record.answer = ','.join(
+                        [r.name + ' ' + r.val_name for r in record.answers_ids.filtered(lambda x: x.textChar)])
             else:
                 record.answer = False
 

@@ -24,11 +24,12 @@ class FolkBedWizard(models.TransientModel):
                 bed_reserved_search = self.env['folk.rooms.accommodations'].search(
                     [('bed_reserve_from', '>=', wizard.from_date),
                      ('bed_reserve_to', '<=', wizard.to_date)])
+                print(bed_reserved_search)
 
                 if bed_reserved_search:
                     for ex in bed_reserved_search:
                         line_ids.append((0, 0, {
-                            'customer_name': ex.customer_name.name,
+                            'partner_name': ex.partner_name.name,
                             'responsible_id': ex.responsible_id.name,
                             'bed_reserve_from': ex.bed_reserve_from,
                             'bed_reserve_to': ex.bed_reserve_to,
@@ -36,9 +37,19 @@ class FolkBedWizard(models.TransientModel):
                             'bed_id': ex.bed_id.bed_no,
 
                         }))
-            # else:
-            #     bed_search = self.env['folk.beds'].search([])
-            #     for bed in bed_search:
+            else:
+                # bed_search = self.env['folk.beds'].search([])
+                # print(bed_search)
+                # for bed in bed_search:
+                not_reserved_beds = self.env['folk.rooms.accommodations'].search(
+                        [('bed_reserve_to', '<=', datetime.today())])
+                print(not_reserved_beds)
+                if not_reserved_beds:
+                    for b in not_reserved_beds:
+                        line_ids.append((0, 0, {
+                                'room_id': b.room_id.name,
+                                'bed_id': b.bed_id.bed_no,
+                            }))
 
         self.write({'line_ids': line_ids})
         context = {
@@ -61,7 +72,8 @@ class BedWizardLine(models.TransientModel):
     _name = 'alfolk.bed.report.line'
 
     wizard_id = fields.Many2one('alfolk.bed.report', ondelete='cascade')
-    customer_name = fields.Char("Customer")
+    # customer_name = fields.Char("Customer")
+    partner_name = fields.Char("Partner")
     bed_reserve_from = fields.Date("Reserve From", default=datetime.today())
     bed_reserve_to = fields.Date("Reserve To", default=datetime.today())
     room_id = fields.Char("Room")

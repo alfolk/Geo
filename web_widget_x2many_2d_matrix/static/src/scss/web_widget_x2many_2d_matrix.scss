@@ -53,6 +53,12 @@ $x2many_2d_matrix_max_height: 450px;
                     &.o_list_text {
                   white-space:nowrap;
                 }
+                > textarea {
+                      width: 100px;
+                    }
+               > input {
+                      width: 100px;
+                    }
                 }
             }
         }

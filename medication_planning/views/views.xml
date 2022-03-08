@@ -102,6 +102,7 @@
                         </div>
 
                         <group>
+                            <field name="category"/>
                             <field name="person"
                                    attrs="{'readonly':[('state','in',('close','picking','receive_med'))]}"/>
                                                      <field name="warehouse"
@@ -155,6 +156,7 @@
                                             <field name="day" required="1"/>
                                             <field name="quantity" required="1"/>
                                             <field name="employee" required="1"/>
+                                            <field name="is_taken" required="1"/>
                                             <field name="products" invisible="1"/>
                                             <field name="quantity_received" invisible="1"/>
                                             <field name="quantity_re" invisible="1"/>

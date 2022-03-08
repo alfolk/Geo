@@ -7,20 +7,20 @@ class RoomsAlfolk(models.Model):
     _name = 'folk.rooms'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Text(string="Name", store=True, tracking=True)
-    room_no = fields.Integer(string="Room", store=True, tracking=True)
+    name = fields.Text(string="Name", store=True, tracking=True,required=True)
+    room_no = fields.Integer(string="Room Number", store=True, tracking=True,required=True)
     beds_no = fields.Integer(string="No Of Beds", store=True, tracking=True)
     notes = fields.Html(string="Notes", store=True, tracking=True)
     responsible_id = fields.Many2one('hr.employee', string="Responsible", tracking=True)
-    floor_id = fields.Many2one('folk.floor', string="Floor", store=True, tracking=True)
+    floor_id = fields.Many2one('folk.floor', string="Floor", store=True, tracking=True,required=True)
     bed_id = fields.One2many('folk.beds', 'rooms_ids', string="Bed", store=True, tracking=True)
     # bed_capacity_num = fields.Integer(related="bed_id.bed_capacity", store=True, tracking=True)
     room_capacity_num = fields.Integer(related="floor_id.room_capacity", store=True, tracking=True)
     room_type = fields.Selection([("lab", "Lab"),
                                   ("dorm room", "Dorm Room"),
-                                  ("other", "Other")], string="Type Of Room", store=True, tracking=True)
+                                  ("other", "Other")], string="Type Of Room", store=True, tracking=True,required=True)
     # type_id = fields.Many2one('folk.type', string="Type", store=True, tracking=True)
-    image = fields.Binary(string="Image", store=True, tracking=True)
+    image = fields.Binary(string="Image", store=True, tracking=True, required=True)
     status = fields.Selection([("available", "Available"),
                                ("occupied", "Occupied")],
                               "Status", tracking=True, default="available",
@@ -34,7 +34,7 @@ class RoomsAlfolk(models.Model):
         room_counts = len(self.floor_id.room_ids)
         floor_capacity = self.floor_id.room_capacity
         if room_counts > floor_capacity:
-            raise UserError("Floor is Full !")
+            raise ValidationError("الطابق ممتلىء!")
 
     def check_room_availability(self):
         for r in self:
